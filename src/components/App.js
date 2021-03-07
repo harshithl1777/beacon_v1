@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import NavBar from './navBar/navBar';
-import Landing from './Landing/Landing'
+import NavBar from './NavBar/NavBar';
+import Landing from './LandingContent/LandingContent'
 import './App.css';
 
 class App extends Component {

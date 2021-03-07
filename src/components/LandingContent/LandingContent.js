@@ -1,8 +1,8 @@
 import React from 'react';
-import landing__img from './Assets/landingimg.svg';
-import './Landing.css';
+import landing__img from './assets/landingimg.svg';
+import './landing.css';
 
-const Landing = () => {
+const LandingContent = () => {
     return (
         <div className='landing'>
                     <div className='background'></div>
@@ -28,4 +28,4 @@ const Landing = () => {
 }
 
 
-export default Landing;
+export default LandingContent;
