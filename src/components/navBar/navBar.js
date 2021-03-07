@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './assets/beacon-logo.svg';
+import logo from './Assets/beacon-logo.svg';
 import './navbar.css';
 
 
