@@ -20,7 +20,7 @@ const LandingContent = () => {
 
             </div>
             <div className='landing__right'>
-                <img src={landing__img} alt='Logo' className='landing__img'/>
+                <img src={landing__img} alt='Logo' className='landing__img' draggable='false'/>
             </div>
         
         </div>
