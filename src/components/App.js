@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar/navBar';
+import NavBar from './NavBar/NavBar';
 import Landing from './LandingContent/LandingContent'
 import './App.css';
 
