@@ -1,0 +1,344 @@
+:root {
+    font-size: 10px;
+  }
+
+
+.halfBlack{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: #001C36;
+}
+
+.signUpSection{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    margin-left: 50%;
+}
+
+.logo{
+    margin-left: 46%;
+    margin-top: 5%;
+}
+
+.title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 45px;
+
+    text-align: center;
+    color: #001C36;
+}
+
+.form{
+    position: abosute;
+}
+
+.form__email{
+    width: 74%;
+    margin-left: 10%;
+    margin-top: 9%;
+    height: 50px;
+
+    background: rgba(50, 211, 202, 0.1);
+    border: 1px solid #32D3CA;
+    border-radius: 5px;
+
+    color: #001C36;
+    font-size: 1.5rem;
+    padding-left: 5%;
+    font-family: Poppins;
+}
+
+.form__email:focus{
+    border: 3px solid #32D3CA;
+    outline: none;
+}
+
+.form__pass{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+    height: 50px;
+
+    background: rgba(255, 194, 74, 0.1);
+    border: 1px solid #FFC24A;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    color: #001C36;
+    font-size: 1.5rem;
+    padding-left: 5%;
+    font-family: Poppins;
+}
+
+.form__pass:focus{
+    border: 3px solid #FFC24A;
+    outline: none;
+}
+
+.form__confPass{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+    height: 50px;
+
+    background: white;
+    border: 1px solid #C3CAD3;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    color: #001C36;
+    font-size: 1.5rem;
+    padding-left: 5%;
+    font-family: Poppins;
+}
+
+.form__confPass:focus{
+    border: 3px solid #C3CAD3;
+    outline: none;
+}
+
+.loginDirect{
+    margin-left: 40%;
+    margin-top: 2%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 15px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #001C36;
+
+}
+
+.form__getStarted{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    height: 60px;
+    background: #32D3CA;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-align: center;
+
+    color: #001C36;
+}
+
+.form__getStarted:hover{
+    cursor:pointer;
+}
+
+.form__getStarted:focus{
+    outline: none;
+}
+
+.line1{
+    border: 1px solid #C3CAD3;
+    margin-left: 10%;
+    width: 35%;
+    margin-top: 4%;
+}
+
+.or{
+    margin-top: -1.6%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+
+    text-align: center;
+
+    color: #C3CAD3;
+}
+
+.line2{
+    border: 1px solid #C3CAD3;
+    margin-left: 55%;
+    width: 35%;
+    margin-top: -1.4%;
+}
+
+@media screen and (max-width:900px) {
+    :root {
+        font-size: 10px;
+      }
+
+    .halfBlack{
+        display:none;
+    }
+    
+    .signUpSection{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin-left:0%;
+    }
+    
+    .logo{
+        margin-left: 46%;
+        margin-top: 5%;
+    }
+    
+    .title{
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 45px;
+    
+        text-align: center;
+        color: #001C36;
+    }
+    
+    .form{
+        position: abosute;
+    }
+    
+    .form__email{
+        width: 74%;
+        margin-left: 10%;
+        margin-top: 9%;
+        height: 50px;
+    
+        background: rgba(50, 211, 202, 0.1);
+        border: 1px solid #32D3CA;
+        border-radius: 5px;
+    
+        color: #001C36;
+        font-size: 1.5rem;
+        padding-left: 5%;
+        font-family: Poppins;
+    }
+    
+    .form__email:focus{
+        border: 3px solid #32D3CA;
+        outline: none;
+    }
+    
+    .form__pass{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 3%;
+        height: 50px;
+    
+        background: rgba(255, 194, 74, 0.1);
+        border: 1px solid #FFC24A;
+        box-sizing: border-box;
+        border-radius: 5px;
+    
+        color: #001C36;
+        font-size: 1.5rem;
+        padding-left: 5%;
+        font-family: Poppins;
+    }
+    
+    .form__pass:focus{
+        border: 3px solid #FFC24A;
+        outline: none;
+    }
+    
+    .form__confPass{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 3%;
+        height: 50px;
+    
+        background: white;
+        border: 1px solid #C3CAD3;
+        box-sizing: border-box;
+        border-radius: 5px;
+    
+        color: #001C36;
+        font-size: 1.5rem;
+        padding-left: 5%;
+        font-family: Poppins;
+    }
+    
+    .form__confPass:focus{
+        border: 3px solid #C3CAD3;
+        outline: none;
+    }
+    
+    .loginDirect{
+        margin-left: 40%;
+        margin-top: 2%;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.3rem;
+        line-height: 15px;
+        /* identical to box height */
+    
+        text-align: center;
+    
+        color: #001C36;
+    
+    }
+    
+    .form__getStarted{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 5%;
+        height: 60px;
+        background: #32D3CA;
+        border-radius: 4px;
+        outline: none;
+        border: none;
+    
+        font-family: Inter;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.8rem;
+        text-align: center;
+    
+        color: #001C36;
+    }
+    
+    .form__getStarted:hover{
+        cursor:pointer;
+    }
+    
+    .form__getStarted:focus{
+        outline: none;
+    }
+    
+    .line1{
+        border: 1px solid #C3CAD3;
+        margin-left: 10%;
+        width: 35%;
+        margin-top: 4%;
+    }
+    
+    .or{
+        margin-top: -1.6%;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.5rem;
+    
+        text-align: center;
+    
+        color: #C3CAD3;
+    }
+    
+    .line2{
+        border: 1px solid #C3CAD3;
+        margin-left: 55%;
+        width: 35%;
+        margin-top: -1.4%;
+    }
+        
+ }

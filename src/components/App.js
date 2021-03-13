@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
+import NavBar from './navBar/navBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NavBar from './NavBar/NavBar';
-import Landing from '../pages/LandingPage/LandingPage';
-import SignUp from '../pages/Signup/Signup';
+import SignUp from './Signup/SignUp';
+import './App.css';
+import LogIn from './Login/LogIn';
+import Contribute from './Contribute/Contribute';
 
 class App extends Component {
     render() {
         return (
-            <div className="App">
+            <div className="App">   
                 <Router>
-                    <Switch>    
-                        <NavBar/>
-                        <Landing/>
-                        <Route path='/signup' render={props => <SignUp {...props}/>}/>
-                    </Switch>    
-                </Router>    
+                    <Switch>           
+                        <Route exact path='/' component={NavBar}/>
+                        <Route exact path='/login' component={LogIn}/>
+                        <Route exact path='/contribute' component={Contribute}/>
+                        <Route path='/signup' component={SignUp}/>
+                    </Switch>   
+                </Router> 
             </div>
         );
     }
