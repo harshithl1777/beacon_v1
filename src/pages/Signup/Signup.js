@@ -29,7 +29,7 @@ import './signup.css';
 //         });
 //   }
 
-const SignUpContent = () => {
+const Signup = () => {
     return (
         <div className='signUp'>
             <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"></link>
@@ -60,4 +60,4 @@ const SignUpContent = () => {
 }
 
 
-export default SignUpContent;
+export default Signup;

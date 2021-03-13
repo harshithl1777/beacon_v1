@@ -1,0 +1,25 @@
+import React, { Component } from 'react';
+import NavBar from './NavBar/NavBar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Signup from '../pages/Signup/Signup';
+import Login from '../pages/Login/Login';
+import Contribute from '../pages/Contribute/Contribute';
+
+class App extends Component {
+    render() {
+        return (
+            <div className="App">   
+                <Router>
+                    <Switch>           
+                        <Route exact path='/' component={NavBar}/>
+                        <Route exact path='/login' component={Login}/>
+                        <Route exact path='/contribute' component={Contribute}/>
+                        <Route path='/signup' component={Signup}/>
+                    </Switch>
+                </Router>  
+            </div>
+        );
+    }
+}
+
+export default App;

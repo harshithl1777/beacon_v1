@@ -3,7 +3,7 @@ import React from 'react';
 import logo from "./assets/logo.svg";
 import './contribute.css';
 
-const ContributeContent = () => {
+const Contribute = () => {
     return (
         <div className='conSection'>
             <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"></link>
@@ -33,4 +33,4 @@ const ContributeContent = () => {
 }
 
 
-export default LogInContent;
+export default Contribute;

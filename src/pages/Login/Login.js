@@ -29,7 +29,7 @@ import './login.css';
 //         });
 //   }
 
-const LogInContent = () => {
+const Login = () => {
     return (
         <div className='logIn'>
             <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"></link>
@@ -62,4 +62,4 @@ const LogInContent = () => {
 }
 
 
-export default LogInContent;
+export default Login;
