@@ -34,7 +34,7 @@ const Login = () => {
         <div className='logIn'>
             <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"></link>
             <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet"></link>
-            <div className="halfBlack"></div>
+            <div className="log-in__half-black"></div>
             <div className="logInSection">
                 <img className="logo" src={logo} alt="logo"></img>
                 <h1 className="title">Log in to Beacon</h1>

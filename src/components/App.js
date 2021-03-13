@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar/NavBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NavBar from './NavBar/NavBar';
 import Signup from '../pages/Signup/Signup';
 import Login from '../pages/Login/Login';
 import Contribute from '../pages/Contribute/Contribute';
+
+import './app.css';
 
 class App extends Component {
     render() {
