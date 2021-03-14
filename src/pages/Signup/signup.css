@@ -2,6 +2,16 @@
     font-size: 10px;
   }
 
+input {
+    padding-left: 3%;
+}
+
+input::placeholder {
+    color: #C3CAD3;
+    font-family: 'Inter';
+    font-size: 1.6rem;
+}
+
   .sign-up {
       display: flex;
       width: 100%;
@@ -42,50 +52,48 @@
     position: abosute;
 }
 
-.form__email{
-    width: 74%;
+.signup-form__email{
+    width: 76.5%;
     margin-left: 10%;
     margin-top: 9%;
     height: 50px;
-
-    background: rgba(50, 211, 202, 0.1);
-    border: 1px solid #32D3CA;
+    padding-left: 3%;
+    border: 1px solid #C3CAD3;
     border-radius: 5px;
 
     color: #001C36;
-    font-size: 1.5rem;
-    padding-left: 5%;
-    font-family: Poppins;
+    font-size: 1.6rem;
+    font-family: 'Inter';
 }
 
-.form__email:focus{
-    border: 3px solid #32D3CA;
+
+.signup-form__email:focus{
+    border: 1px solid #32D3CA;
+    box-shadow: 0px 0px 0px 4px rgba(50, 211, 202, 0.25);
     outline: none;
 }
 
-.form__pass{
+.signup-form__pass{
     width: 80%;
     margin-left: 10%;
     margin-top: 3%;
     height: 50px;
-
-    background: rgba(255, 194, 74, 0.1);
-    border: 1px solid #FFC24A;
+    border: 1px solid #C3CAD3;
     box-sizing: border-box;
     border-radius: 5px;
 
     color: #001C36;
-    font-size: 1.5rem;
-    padding-left: 5%;
+    font-size: 1.6rem;
     font-family: Poppins;
 }
 
-.form__pass:focus{
-    border: 3px solid #FFC24A;
+.signup-form__pass:focus {
     outline: none;
+    box-shadow: 0px 0px 0px 4px rgba(50, 211, 202, 0.25);
+    border: 1px solid #32D3CA;
 }
 
-.form__confPass{
+.signup-form__confPass{
     width: 80%;
     margin-left: 10%;
     margin-top: 3%;
@@ -98,32 +106,35 @@
 
     color: #001C36;
     font-size: 1.5rem;
-    padding-left: 5%;
     font-family: Poppins;
 }
 
-.form__confPass:focus{
-    border: 3px solid #C3CAD3;
+.signup-form__confPass:focus {
     outline: none;
+    box-shadow: 0px 0px 0px 4px rgba(50, 211, 202, 0.25);
+    border: 1px solid #32D3CA;
 }
 
 .loginDirect{
-    margin-left: 40%;
+    margin-left: 57%;
     margin-top: 2%;
+    width: fit-content;
     font-family: Inter;
     font-style: normal;
     font-weight: bold;
     font-size: 1.3rem;
     line-height: 15px;
     /* identical to box height */
-
     text-align: center;
-
     color: #001C36;
 
 }
 
-.form__getStarted{
+.loginDirect:hover {
+    cursor: pointer;
+}
+
+.signup-form__getStarted{
     width: 80%;
     margin-left: 10%;
     margin-top: 5%;
@@ -142,38 +153,17 @@
     color: #001C36;
 }
 
-.form__getStarted:hover{
+.signup-form__getStarted:hover{
+    filter: opacity(0.80);
     cursor:pointer;
 }
 
-.form__getStarted:focus{
+.signup-form__getStarted:focus{
     outline: none;
 }
 
-.line1{
-    border: 1px solid #C3CAD3;
+.line-separator {
     margin-left: 10%;
-    width: 35%;
-    margin-top: 4%;
-}
-
-.or{
-    margin-top: -1.6%;
-    font-family: Inter;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.5rem;
-
-    text-align: center;
-
-    color: #C3CAD3;
-}
-
-.line2{
-    border: 1px solid #C3CAD3;
-    margin-left: 55%;
-    width: 35%;
-    margin-top: -1.4%;
 }
 
 @media screen and (max-width:900px) {
