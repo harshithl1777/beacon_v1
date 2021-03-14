@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './Assets/beacon-logo.svg';
-import './navbar.css';
-
+import './navBar.css'
 
 const NavBar = () => {
     return (
