@@ -6,6 +6,7 @@ import Login from '../pages/Login/Login';
 import Contribute from '../pages/Contribute/Contribute';
 
 import './app.css';
+import LandingPage from '../pages/LandingPage/LandingPage';
 
 class App extends Component {
     render() {
@@ -13,7 +14,7 @@ class App extends Component {
             <div className="App">   
                 <Router>
                     <Switch>           
-                        <Route exact path='/' component={NavBar}/>
+                        <Route exact path='/' component={LandingPage}/>
                         <Route exact path='/login' component={Login}/>
                         <Route exact path='/contribute' component={Contribute}/>
                         <Route path='/signup' component={Signup}/>
