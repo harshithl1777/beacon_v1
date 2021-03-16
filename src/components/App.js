@@ -6,6 +6,7 @@ import Contribute from '../pages/Contribute/Contribute';
 
 import './app.css';
 import LandingPage from '../pages/LandingPage/LandingPage';
+import AboutPage from '../pages/AboutUsPage/AboutUsPage';
 
 class App extends Component {
     render() {
@@ -14,6 +15,7 @@ class App extends Component {
                 <Router>
                     <Switch>           
                         <Route exact path='/' component={LandingPage}/>
+                        <Route exact path='/aboutus' component={AboutPage}/>
                         <Route exact path='/login' component={Login}/>
                         <Route exact path='/contribute' component={Contribute}/>
                         <Route path='/signup' component={Signup}/>
