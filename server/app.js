@@ -3,7 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 require('dotenv').config({ path: './config/.env' });
 const path = require('path');
-const auth = require('./routes/users');
+
+const auth = require('./routes/auth.js');
 
 // mount required routes and parsing libs
 app.use(bodyParser.json());
@@ -18,4 +19,4 @@ app.use((req, res, next) => {
     res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
 });
 
-app.listen(3000 || process.env.PORT);
+app.listen(3000 || process.env.PORT, () => console.log('Express is listening'));
