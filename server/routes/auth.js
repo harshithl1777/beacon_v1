@@ -1,6 +1,5 @@
 const express = require('express');
 const auth =  require('../models/users');
-console.log(process.env);
 const app = module.exports = express();
 
 app.post('/firebase/users/new', ({ body }, res) => {

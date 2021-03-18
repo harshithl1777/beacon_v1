@@ -1,3 +1,23 @@
 * {
     margin: 0;
 }
+
+.btn--sea {
+    background: #32D3CA;
+    border-radius: 4px;
+    color: #001C36;;
+    border: none;
+}
+
+button {
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+    
+}
+
+input:focus, button:focus {
+    outline: none;
+}

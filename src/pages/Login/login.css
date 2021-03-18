@@ -1,29 +1,33 @@
-:root {
-    font-size: 10px;
-  }
 
-
-.log-in__half-black{
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    margin-left: 50%;
-    background: #001C36;
+input::placeholder {
+    color: #C3CAD3;
+    font-family: 'Inter';
+    font-size: 1.6rem;
 }
 
-.logInSection{
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    margin-left: 0%;
+input {
+    padding-left: 3%;
 }
 
-.logo{
-    margin-left: 46%;
-    margin-top: 5%;
+button:hover {
+    filter: opacity(0.90);
 }
 
-.title{
+.log-in {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.log-in__logo{
+    margin-top: 51px;
+}
+
+.log-in__title{
+    margin-top: 21px;
     font-family: Poppins;
     font-style: normal;
     font-weight: 800;
@@ -34,92 +38,112 @@
     color: #001C36;
 }
 
-.title__text{
+.log-in__desc {
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 26px;
-    margin-left: 10%;
-    width: 80%;
-
+    color: #001C36;
+    width: 526px;
     text-align: center;
-
-    color: #001C36;
-
+    margin-top: 13px;
 }
 
+.log-in__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 522px;
+}
 
-
-.form__email{
-    width: 74%;
-    margin-left: 10%;
-    margin-top: 9%;
-    height: 50px;
-
-    background: rgba(50, 211, 202, 0.1);
+input:not(:placeholder-shown):not(:focus) {
     border: 1px solid #32D3CA;
-    border-radius: 5px;
+    background: rgba(50, 211, 202, 0.05);
+  }
+  
+  input:placeholder-shown {
+    border: 1px solid #C3CAD3;
+  }
+input {
+    font-family: 'Inter';
+}
+
+
+.log-in__password-wrapper {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.log-in__title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 45px;
 
     color: #001C36;
-    font-size: 1.5rem;
-    padding-left: 5%;
-    font-family: Poppins;
 }
 
-.form__email:focus{
-    border: 3px solid #32D3CA;
-    outline: none;
-}
-
-.form__pass{
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 3%;
-    height: 50px;
-
-    background: rgba(253, 87, 77, 0.1);
-    border: 1px solid #FD574D;  
+.log-in__input {
+    margin-top: 44px;
+    width: 522px;
+    height: 51px;
+    border: 1px solid #C3CAD3;
     box-sizing: border-box;
     border-radius: 5px;
-
     color: #001C36;
-    font-size: 1.5rem;
-    padding-left: 5%;
-    font-family: Poppins;
+    font-size: 1.6rem;
+
 }
 
-.form__pass:focus{
-    border: 3px solid #FD574D;  
-    outline: none;
+
+.log-in__input--lower {
+    margin-top: 34px;
+    width: 522px;
+    height: 51px;
+    border: 1px solid #C3CAD3;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #001C36;
+    font-size: 1.6rem;
+
 }
 
-.signupDirect{
-    margin-left: 45%;
-    margin-top: 2%;
+.status-alert {
+    font-family: 'Inter';
+    width: 400px;
+}
+
+.status-alert__box.is-red-error {
+    background: #FD574D;
+    background-color: #FD574D;
+}
+
+.status-alert__icon.is-error {
+    background-image: url(./assets/Group.svg);
+}
+
+.log-in__forgot-password{
+    margin-top: 16px;
     font-family: Inter;
     font-style: normal;
     font-weight: bold;
     font-size: 1.3rem;
     line-height: 15px;
-    /* identical to box height */
-
-    text-align: center;
-
     color: #001C36;
-
+    text-decoration: none;
+    align-self: flex-end;
 }
 
-.form__continue{
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 5%;
-    height: 60px;
-    background: #32D3CA;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-
+.log-in__btn{
+    margin-top: 34px;
+    width: 522px;
+    height: 50px;
     font-family: Inter;
     font-style: normal;
     font-weight: bold;
@@ -129,197 +153,70 @@
     color: #001C36;
 }
 
-.form__continue:hover{
+.signup-form__getStarted:hover{
+    filter: opacity(0.80);
     cursor:pointer;
 }
 
-.form__continue:focus{
+.signup-form__getStarted:focus{
     outline: none;
 }
 
-.line1{
-    border: 1px solid #C3CAD3;
-    margin-left: 10%;
-    width: 35%;
-    margin-top: 4%;
+.log-in__seperator {
+    margin-top: 13px;
 }
 
-.or{
-    margin-top: -1.6%;
+.log-in__third-party {
+    margin-top: 13px;
+    width: 522px;
+    height: 50px;
+}
+
+.log-in__google {
+    margin-right: 20px;
+    width: 251px;
+    height: 50px;
+    background: #DE5246;
+    border-radius: 4px;
     font-family: Inter;
     font-style: normal;
-    font-weight: normal;
-    font-size: 1.5rem;
-
-    text-align: center;
-
-    color: #C3CAD3;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
 }
 
-.line2{
-    border: 1px solid #C3CAD3;
-    margin-left: 55%;
-    width: 35%;
-    margin-top: -1.4%;
+.log-in__google-content {
+    margin-left: 21px;
+    width: 188px;
+    height: 24px;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: space-between;
 }
 
-@media screen and (max-width:900px) {
-    :root {
-        font-size: 10px;
-      }
-
-    .halfBlack{
-        display:none;
-    }
-    
-    
-    .logInSection{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        margin-left: 0%;
-    }
-    
-    .logo{
-        margin-left: 46%;
-        margin-top: 5%;
-    }
-    
-    .title{
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: 800;
-        font-size: 30px;
-        line-height: 45px;
-    
-        text-align: center;
-        color: #001C36;
-    }
-    
-    .title__text{
-        font-family: Inter;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 26px;
-    
-        text-align: center;
-    
-        color: #001C36;
-    
-    }
-    
-    
-    
-    .form__email{
-        width: 74%;
-        margin-left: 10%;
-        margin-top: 9%;
-        height: 50px;
-    
-        background: rgba(50, 211, 202, 0.1);
-        border: 1px solid #32D3CA;
-        border-radius: 5px;
-    
-        color: #001C36;
-        font-size: 1.5rem;
-        padding-left: 5%;
-        font-family: Poppins;
-    }
-    
-    .form__email:focus{
-        border: 3px solid #32D3CA;
-        outline: none;
-    }
-    
-    .form__pass{
-        width: 80%;
-        margin-left: 10%;
-        margin-top: 3%;
-        height: 50px;
-    
-        background: rgba(253, 87, 77, 0.1);
-        border: 1px solid #FD574D;  
-        box-sizing: border-box;
-        border-radius: 5px;
-    
-        color: #001C36;
-        font-size: 1.5rem;
-        padding-left: 5%;
-        font-family: Poppins;
-    }
-    
-    .form__pass:focus{
-        border: 3px solid #FD574D;  
-        outline: none;
-    }
-    
-    .signupDirect{
-        margin-left: 45%;
-        margin-top: 2%;
-        font-family: Inter;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 1.3rem;
-        line-height: 15px;
-        /* identical to box height */
-    
-        text-align: center;
-    
-        color: #001C36;
-    
-    }
-    
-    .form__continue{
-        width: 80%;
-        margin-left: 10%;
-        margin-top: 5%;
-        height: 60px;
-        background: #32D3CA;
-        border-radius: 4px;
-        outline: none;
-        border: none;
-    
-        font-family: Inter;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 1.8rem;
-        text-align: center;
-    
-        color: #001C36;
-    }
-    
-    .form__continue:hover{
-        cursor:pointer;
-    }
-    
-    .form__continue:focus{
-        outline: none;
-    }
-    
-    .line1{
-        border: 1px solid #C3CAD3;
-        margin-left: 10%;
-        width: 35%;
-        margin-top: 4%;
-    }
-    
-    .or{
-        margin-top: -1.6%;
-        font-family: Inter;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1.5rem;
-    
-        text-align: center;
-    
-        color: #C3CAD3;
-    }
-    
-    .line2{
-        border: 1px solid #C3CAD3;
-        margin-left: 55%;
-        width: 35%;
-        margin-top: -1.4%;
-    }
+.log-in__fb {
+    width: 251px;
+    height: 50px;
+    background: #1778F2;
+    border-radius: 4px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
 }
+
+
+.log-in__fb-content {
+    margin-left: 21px;
+    width: 201px;
+    height: 24px;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: space-between;
+}
+

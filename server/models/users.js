@@ -13,7 +13,7 @@ const newUserFirebase = (email, password, callback) => {
         password,
     })
     .then(({ uid }) => {
-        callback([uid]); 
+        callback([uid]);
     })
     .catch(({errorInfo}) => { callback([null, errorInfo.code, errorInfo.message]) });//return [null, errorInfo.code ,errorInfo.message] });
 }
