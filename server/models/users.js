@@ -6,18 +6,6 @@ firebase.initializeApp({
     credential: firebase.credential.cert(serviceAccountKey)
 });
 
-const newUserFirebase = (email, password, callback) => {
-    firebase.auth()
-    .createUser({
-        email,
-        password,
-    })
-    .then(({ uid }) => {
-        callback([uid]);
-    })
-    .catch(({errorInfo}) => { callback([null, errorInfo.code, errorInfo.message]) });//return [null, errorInfo.code ,errorInfo.message] });
-}
-
 const newUserMongo = (uid, email, callback) => {
     const uri = `mongodb+srv://${process.env.MONGO_DB_USER_NAME}:${process.env.MONGO_DB_USER_PW}@cluster0.h96zb.mongodb.net/web-app?retryWrites=true&w=majority`;
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -29,6 +17,7 @@ const newUserMongo = (uid, email, callback) => {
             callback([result.insertedCount, uid]);
         })
         .catch((err) => {
+            console.log(err);
             client.close();
             callback([null]);
         });
@@ -37,6 +26,5 @@ const newUserMongo = (uid, email, callback) => {
 
 
 module.exports = {
-    newUserFirebase,
     newUserMongo
 };

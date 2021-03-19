@@ -57,13 +57,9 @@ button:hover {
     width: 522px;
 }
 
-input:not(:placeholder-shown):not(:focus) {
+
+  input:focus {
     border: 1px solid #32D3CA;
-    background: rgba(50, 211, 202, 0.05);
-  }
-  
-  input:placeholder-shown {
-    border: 1px solid #C3CAD3;
   }
 input {
     font-family: 'Inter';
@@ -116,7 +112,7 @@ input {
 
 .status-alert {
     font-family: 'Inter';
-    width: 400px;
+    width: 500px;
 }
 
 .status-alert__box.is-red-error {
@@ -220,3 +216,56 @@ input {
     justify-content: space-between;
 }
 
+@media only screen and (max-width: 580px) {
+    .log-in__third-party {
+        display: flex;
+        flex-direction: column;
+        height: 120px;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    .log-in__google {
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .log-in__google-content {
+        margin: 0 auto;
+    }
+
+    .log-in__fb {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .log-in__fb-content {
+        margin: 0 auto;
+    }
+
+    .log-in__input, .log-in__input--lower {
+        width: 100%;
+    }
+
+    .log-in__btn {
+        width: 100%;
+    }
+
+    .log-in__form {
+        width: 90%;
+    }
+
+    .log-in__desc {
+        width: 90%;
+    }
+
+    .log-in__seperator {
+        width: 90%;
+    }
+}

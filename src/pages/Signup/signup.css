@@ -57,15 +57,6 @@ button:hover {
     width: 522px;
 }
 
-input:not(:placeholder-shown):not(:focus) {
-    border: 1px solid #32D3CA;
-    background: rgba(50, 211, 202, 0.05);
-  }
-  
-  input:placeholder-shown {
-    border: 1px solid #C3CAD3;
-  }
-
 input:focus {
     outline: none;
     border: 1px solid #32D3CA;
@@ -214,3 +205,67 @@ input {
     justify-content: space-between;
 }
 
+@media only screen and (max-width: 580px) {
+    .sign-up__third-party {
+        display: flex;
+        flex-direction: column;
+        height: 120px;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    .sign-up__google {
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sign-up__google-content {
+        margin: 0 auto;
+    }
+
+    .sign-up__fb {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sign-up__fb-content {
+        margin: 0 auto;
+    }
+
+    .sign-up__input, .sign-up__input--lower {
+        width: 100%;
+    }
+
+    .sign-up__btn {
+        width: 100%;
+    }
+
+    .sign-up__form {
+        width: 90%;
+    }
+
+    .sign-up__desc {
+        width: 90%;
+    }
+
+    .sign-up__seperator {
+        width: 90%;
+    }
+
+    .sign-up__password-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 145px;
+    }
+
+    .sign-up__input--small {
+        width: 100%;
+    }
+}
