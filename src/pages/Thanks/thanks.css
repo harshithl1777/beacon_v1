@@ -1,0 +1,100 @@
+:root {
+    font-size: 10px;
+  }
+
+
+.thanks-top-line{
+    width: 100%;
+    border: 4px solid #32D3CA;
+
+}
+
+.thanks-section{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.logo{
+    margin-left: 46%;
+    margin-top: 5%;
+}
+
+.thanks-title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 45px;
+    margin-top: 2%;
+
+    text-align: center;
+    color: #001C36;
+}
+
+.thanks-title__text{
+    margin-top: 2%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    margin-left: 22.5%;
+    width: 55%;
+
+    text-align: center;
+
+    color: #001C36;
+
+}
+
+
+
+.contributed{
+    margin-left: 41.5%;
+    margin-top: 2%;
+}
+
+@media screen and (max-width:1050px) {
+    .contributed{
+        margin-left: 37%;
+        margin-top: 2%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .contributed{
+        margin-left: 33%;
+        margin-top: 2%;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .contributed{
+        margin-left: 29%;
+        margin-top: 2%;
+    }
+}
+
+.gtg{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 2%;
+    height: 45px;
+    background: #001C36;
+    border-radius: 4px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+
+}
+
+.gtg:focus{
+    outline: none;
+}

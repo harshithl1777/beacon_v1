@@ -6,6 +6,11 @@ import "firebase/auth";
 import Signup from '../pages/Signup/Signup';
 import Login from '../pages/Login/Login';
 import Contribute from '../pages/Contribute/Contribute';
+import StockData from '../pages/StockData/StockData';
+import Thanks from '../pages/Thanks/Thanks';
+import OutOfCredits from '../pages/OutOfCredits/OutOfCredits';
+
+import './app.css';
 import LandingPage from '../pages/LandingPage/LandingPage';
 import AboutPage from '../pages/AboutUsPage/AboutUsPage';
 import './app.css';
@@ -34,6 +39,9 @@ class App extends Component {
                         <Route exact path='/login' component={Login}/>
                         <Route exact path='/contribute' component={Contribute}/>
                         <Route exact path='/signup' component={Signup}/>
+                        <Route exact path="/stockdata" component={StockData}/>
+                        <Route exact path="/thanks" component={Thanks}/>
+                        <Route exact path="/outofcredits" component={OutOfCredits}/>
                     </Switch>
                     <Switch>
                         <Route exact path='/search' />
