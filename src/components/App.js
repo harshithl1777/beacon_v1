@@ -33,9 +33,12 @@ class App extends Component {
                         <Route exact path='/aboutus' component={AboutPage}/>
                         <Route exact path='/login' component={Login}/>
                         <Route exact path='/contribute' component={Contribute}/>
-                        <Route path='/signup' component={Signup}/>
+                        <Route exact path='/signup' component={Signup}/>
                     </Switch>
-                </Router>  
+                    <Switch>
+                        <Route exact path='/search' />
+                    </Switch>
+                </Router>
             </div>
         );
     }
