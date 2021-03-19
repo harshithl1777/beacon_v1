@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
 import firebase from "firebase/app";
 import "firebase/auth";
 
+import InteriorNav from './InteriorNav/InteriorNav';
+import Search from '../pages/Search/Search';
 import Signup from '../pages/Signup/Signup';
 import Login from '../pages/Login/Login';
 import Contribute from '../pages/Contribute/Contribute';
@@ -10,7 +12,6 @@ import StockData from '../pages/StockData/StockData';
 import Thanks from '../pages/Thanks/Thanks';
 import OutOfCredits from '../pages/OutOfCredits/OutOfCredits';
 
-import './app.css';
 import LandingPage from '../pages/LandingPage/LandingPage';
 import AboutPage from '../pages/AboutUsPage/AboutUsPage';
 import './app.css';
@@ -32,21 +33,26 @@ class App extends Component {
     render() {
         return (
             <div className="App">   
-                <Router>
+                <BrowserRouter>
                     <Switch>           
                         <Route exact path='/' component={LandingPage}/>
                         <Route exact path='/aboutus' component={AboutPage}/>
-                        <Route exact path='/login' component={Login}/>
-                        <Route exact path='/contribute' component={Contribute}/>
-                        <Route exact path='/signup' component={Signup}/>
-                        <Route exact path="/stockdata" component={StockData}/>
-                        <Route exact path="/thanks" component={Thanks}/>
-                        <Route exact path="/outofcredits" component={OutOfCredits}/>
+                        <Route path="/auth">
+                            <Route exact path='/auth/login' component={Login}/>
+                            <Route exact path='/auth/signup' component={Signup}/>
+                        </Route>
+                        <Route path='/contribute'>
+                            <Route exact path='/contribute/1' component={Contribute}/>
+                            <Route exact path="/contribute/2" component={StockData}/>
+                            <Route exact path="/contribute/3" component={Thanks}/>
+                            <Route exact path="/contribute/4" component={OutOfCredits}/>
+                        </Route>
+                        <Route path="/app">
+                            <InteriorNav />
+                            <Route exact path='/app/search' render={(props) => <Search {...props} />} />
+                        </Route>
                     </Switch>
-                    <Switch>
-                        <Route exact path='/search' />
-                    </Switch>
-                </Router>
+                </BrowserRouter>
             </div>
         );
     }
