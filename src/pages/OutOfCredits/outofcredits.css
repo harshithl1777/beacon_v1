@@ -1,0 +1,184 @@
+:root {
+    font-size: 10px;
+  }
+
+
+.ooc-section{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 28, 54, 0.25);
+}
+
+.ooc__alert{
+    position: absolute;
+    width: 55%;
+    margin-left: 22.5%;
+    height: 80%;
+    margin-top: 4%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.ooc__head{
+    margin-top: 0%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+
+    text-align: center;
+
+    color: #001C36;
+}
+
+.ooc__text{
+    margin-top: 3%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    max-width:70%;
+    margin-left:15%;
+
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    color: #001C36;
+
+}
+
+.ooc__text-2{
+    margin-top: 5%;
+    max-width: 80%;
+    margin-left: 10%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    color: #001C36;
+
+}
+
+.ooc__cont{
+    margin-top: 2%;
+    margin-left: 50%;
+    height: 35px;
+    width: 18%;
+    border: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    background: #001C36;
+    border-radius: 5px;
+
+
+    color: #FFFFFF;
+}
+
+.ooc__cont:focus{
+    outline: none;
+}
+
+.ooc__sg{
+    margin-left: 3%;
+    height: 35px;
+    width: 18%;
+    border: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    background: #32D3CA;
+    border-radius: 5px;
+
+
+    color: #001C36;
+}
+
+.ooc__sg:focus{
+    outline: none;
+}
+
+.exit{
+    margin-left: 95%;
+    margin-top: 3%;
+}
+
+.wallet{
+    margin-left: 34.5%;
+    margin-top: 5%;
+}
+
+@media screen and (max-width:1050px) {
+    .wallet{
+        margin-left: 25.5%;
+        margin-top: 5%;
+    }
+
+    .ooc__sg{
+        margin-left: 3%;
+        height: 35px;
+        width: 18%;
+        border: none;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 10px;
+        background: #32D3CA;
+        border-radius: 5px;
+    
+    
+        color: #001C36;
+    }
+
+    .ooc__cont{
+        margin-top: 2%;
+        margin-left: 50%;
+        height: 35px;
+        width: 18%;
+        border: none;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 10px;
+        background: #001C36;
+        border-radius: 5px;
+    
+    
+        color: #FFFFFF;
+    }
+}
+
+@media screen and (max-width:777px) {
+    .wallet{
+        margin-left: 26.5%;
+        margin-top: 5%;
+    }
+
+    .ooc__alert{
+        width: 70%;
+        left: -7.5%;
+    }
+}
+
+@media screen and (max-width:614px) {
+    .wallet{
+        margin-left: 20.5%;
+        margin-top: 5%;
+    }
+
+    .ooc__alert{
+        width: 85%;
+        left: -15%;
+    }
+}
