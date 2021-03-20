@@ -56,7 +56,7 @@ html {
 
 .search-page__location-wrapper {
     margin-left: 23px;
-    width: 157px;
+    width: 200px;
     height: 72px;
     display: flex;
     flex-direction: column;
@@ -74,7 +74,7 @@ html {
 
 
 .search-page__location-btn {
-    width: 157px;
+    width: 100%;
     height: 42px;
     display: flex;
     flex-direction: row;
@@ -88,7 +88,7 @@ html {
 
 .search-page__location-content {
     margin-left: 8px;
-    width: 126px;
+    width: 166px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -144,7 +144,7 @@ html {
 
 .search-page__distance-dropdown {
     margin-left: 0px;
-    width: 249px;
+    width: 100%;
     height: 42px;
     border: 1px solid #32D3CA;
     box-sizing: border-box;
@@ -176,7 +176,7 @@ html {
 .search-page__distance-wrapper {
     margin-left: 23px;
     margin-top: 0px;
-    width: 249px;
+    width: 223px;
     height: 72px;
     display: flex;
     flex-direction: column;
@@ -187,7 +187,7 @@ html {
 .search-page__amount-wrapper {
     margin-left: 23px;
     margin-top: 0px;
-    width: 226px;
+    width: 200px;
     height: 72px;
     display: flex;
     flex-direction: column;
@@ -196,7 +196,7 @@ html {
 
 .search-page__data-amount-dropdown {
     margin-left: 0px;
-    width: 226px;
+    width: 100%;
     height: 42px;
     border: 1px solid #32D3CA;
     box-sizing: border-box;
@@ -223,7 +223,7 @@ select:focus {
 .search-page__dropdown-icon {
     position: relative;
     top: 25px;
-    left: 222px;
+    left: 194px;
     color: #32D3CA;
     height: 7px;
     width: 12px;
@@ -232,7 +232,7 @@ select:focus {
 .search-page__dropdown-icon-amount {
     position: relative;
     top: 25px;
-    left: 200px;
+    left: 174px;
     color: #32D3CA;
     height: 7px;
     width: 12px;
