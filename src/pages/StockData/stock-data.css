@@ -52,7 +52,7 @@
 .stock-levels__title{
     text-align: center;
     margin-right: 34%;
-    margin-top: -2%;
+    margin-top: -3.8%;
 
     font-family: Inter;
     font-style: normal;
@@ -92,6 +92,20 @@
 
     color: #32D3CA;
 }
+.stock-levels__del-product{
+    margin-top: .5%;
+    background: none;
+    border: none;
+    margin-left: 70.8%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #32D3CA;
+}
 
 .add-product__prod{
     height: 45px;
@@ -112,93 +126,86 @@
 }
 
 
-
-.add-product__btns{
-    margin-left: 40%;
-    width: 41%;
+.stock-dropdowns{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex: row;
     justify-content: space-between;
-    height:45px;
-    margin-top: -45px;
+    width: 60%;
+    height: 70px;
+    margin-left: 20%;
 }
 
-
-.add-product__empty{
-    margin: auto;
-    height: 45px;
-    width: 110px;
-    border: none;
-    background: rgba(253, 87, 77, 0.15);
-    border-radius: 5px;
+#stock-dropdown-1{
+    margin-top: 1%;
+    background: none;
     font-family: Inter;
     font-style: normal;
-    font-weight: 800;
+    font-weight: normal;
     font-size: 16px;
-
-    color: #FD574D;
-}
-
-.add-product__empty:focus{
-    outline: none;
-}
-
-.add-product__low{
-    margin: auto;
-    height: 45px;
-    width: 100px;
-    border: none;
-    background: rgba(244, 179, 12, 0.15);
+    text-align: center;
+    color: #C3CAD3;
+    border: 1px solid #C3CAD3;
+    box-sizing: border-box;
     border-radius: 5px;
+    width: 180px;
+    height: 45px;
+    outline: none;
+    padding-left: 2%;
+}
+
+#stock-dropdown-2{
+    margin-top: 1%;
+    background: none;
     font-family: Inter;
     font-style: normal;
-    font-weight: 800;
+    font-weight: normal;
     font-size: 16px;
-
-    color: #F4B30C;
-}
-
-.add-product__low:focus{
-    outline: none;
-}
-
-.add-product__medium{
-    margin: auto;
-    height: 45px;
-    width: 120px;
-    border: none;
-    background: rgba(44, 180, 239, 0.15);
+    text-align: center;
+    color: #C3CAD3;
+    border: 1px solid #C3CAD3;
+    box-sizing: border-box;
     border-radius: 5px;
+    width: 180px;
+    height: 45px;
+    outline: none;
+    padding-left: 2%;
+}
+
+#stock-dropdown-3{
+    margin-top: 1%;
+    background: none;
     font-family: Inter;
     font-style: normal;
-    font-weight: 800;
+    font-weight: normal;
     font-size: 16px;
-
-    color: #2CB4EF;
-}
-
-.add-product__medium:focus{
-    outline: none;
-}
-
-.add-product__high{
-    margin: auto;
-    height: 45px;
-    width: 100px;
-    border: none;
-    background: rgba(65, 214, 160, 0.15);
+    text-align: center;
+    color: #C3CAD3;
+    border: 1px solid #C3CAD3;
+    box-sizing: border-box;
     border-radius: 5px;
+    width: 180px;
+    height: 45px;
+    outline: none;
+    padding-left: 2%;
+}
+
+.stock-price{
+    margin-top: 1%;
+    background: none;
     font-family: Inter;
     font-style: normal;
-    font-weight: 800;
+    font-weight: normal;
     font-size: 16px;
-
-    color: #41D6A0;
-}
-
-.add-product__high:focus{
+    text-align: center;
+    color: #C3CAD3;
+    border: 1px solid #C3CAD3;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 150px;
+    height: 45px;
     outline: none;
+    padding-right: 3%;
+    content: '$';
 }
 
 .check-box__text{
@@ -266,7 +273,7 @@
         font-size: 1.2rem;
         line-height: 26px;
         margin-top: -2.7%;
-        margin-left: 4%;
+        margin-leftn: 4%;
         
         text-align: center;
     }
@@ -327,4 +334,10 @@
 
 .form__continue:focus{
     outline: none;
+}
+
+.latch{
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }

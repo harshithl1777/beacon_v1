@@ -50,6 +50,8 @@ const LinesData = () => {
         <div className='lines-section'>
             <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"></link>
             <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet"></link>
+            <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+            <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
             <div className="lines-top-line"></div>
                 <img className="logo" src={logo} alt="logo"></img>
                 <h1 className="lines-title">Lines Data</h1>
@@ -69,46 +71,23 @@ const LinesData = () => {
                         <button className="lines-data__76add">76+</button>
                     </div>
                     <h1 className="lines-data__title-2">How fast is the line moving?</h1>
-                        {/* <img alt='dropdown arrow'src={dropdownIcon} className='lines-icon' /> */}
-                        <select id="dropdown-basic" placeholder={dropTitle1}>
+                    <h1 className="lines-data__title-3">How long did you spend in the line?</h1>
+                        <div className="dropdowns">
+                        <select id="dropdown-basic">
                             <option disabled selected>{dropTitle1}</option>
                             <option onClick={() => handleSpeed("slow")}>Slow</option>
                             <option onClick={() => handleSpeed("avg")}>Average</option>
                             <option onClick={() => handleSpeed("fast")}>Fast</option>
                         </select>
-                    {/* <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
-                            {dropTitle1}   
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu className="menu">
-                            <Dropdown.Item className="top" onClick={() => handleSpeed("slow")}>Slow</Dropdown.Item>
-                            <Dropdown.Item className="mid" onClick={() => handleSpeed("avg")}>Average</Dropdown.Item>
-                            <Dropdown.Item className="bottom" onClick={() => handleSpeed("avg")}>Fast</Dropdown.Item>
-                        </Dropdown.Menu>
-                        </Dropdown> */}
-                    <h1 className="lines-data__title-3">How long did you spend in the line?</h1>
-                    {/* <img alt='dropdown arrow'src={dropdownIcon} className='lines-icon' /> */}
-                        <select id="line-time" placeholder={dropTitle2}>
+                        <select id="line-time">
+                            <option disabled selected>{dropTitle2}</option>
                             <option onClick={() => handleLineTime("no-line")}>No Line</option>
                             <option onClick={() => handleLineTime("<5")}>Less than 5 mins</option>
                             <option onClick={() => handleLineTime("<15")}>Less than 15 mins</option>
                             <option onClick={() => handleLineTime("<30")}>Less than 30 mins</option>
                             <option onClick={() => handleLineTime(">31")}>More than 31 mins</option>
                         </select>
-                    {/* <Dropdown>
-                        <Dropdown.Toggle variant="success" id="line-time">
-                            {dropTitle2}   
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu className="menu">
-                            <Dropdown.Item className="top1" onClick={() => handleLineTime("no-line")}>No Lines</Dropdown.Item>
-                            <Dropdown.Item className="mid1" onClick={() => handleLineTime("<5")}> Less than 5 mins </Dropdown.Item>
-                            <Dropdown.Item className="mid1" onClick={() => handleLineTime("<15")}> Less than 15 mins</Dropdown.Item>
-                            <Dropdown.Item className="mid1" onClick={() => handleLineTime("<30")}> Less than 30 mins</Dropdown.Item>
-                            <Dropdown.Item className="bottom1" onClick={() => handleLineTime(">31")}> More than 31 mins</Dropdown.Item>
-                        </Dropdown.Menu>
-                        </Dropdown> */}
+                        </div>
                     <button className="add-product__next">Continue to the next step</button>
                 </div>      
                     

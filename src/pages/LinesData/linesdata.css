@@ -203,7 +203,7 @@
 
 .lines-data__title-3{
     margin-left: 25.5%;
-    margin-top: -6.3%;
+    margin-top: -1.8%;
     font-family: Inter;
     font-style: normal;
     font-weight: bold;
@@ -216,7 +216,6 @@
 
 #dropdown-basic{
     margin-top: 1%;
-    margin-left: 22.5%;
     background: none;
     font-family: Inter;
     font-style: normal;
@@ -227,7 +226,7 @@
     border: 1px solid #C3CAD3;
     box-sizing: border-box;
     border-radius: 5px;
-    width: 300px;
+    width: 335px;
     height: 45px;
     outline: none;
     padding-left: 2%;
@@ -243,7 +242,7 @@
     padding-top: 4%;
     color: #C3CAD3;
     box-sizing: border-box;
-    width: 300px;
+    width: 335px;
     height: 45px;
     outline: none;
 }
@@ -259,7 +258,7 @@
     color: #C3CAD3;
     border: 1px solid #C3CAD3;
     box-sizing: border-box;
-    width: 300px;
+    width: 335px;
     height: 45px;
     outline: none;
 }
@@ -274,7 +273,7 @@
     padding-top: 4%;
     color: #C3CAD3;
     box-sizing: border-box;
-    width: 300px;
+    width: 335px;
     height: 45px;
     outline: none;
 }
@@ -289,7 +288,7 @@
     padding-top: 4%;
     color: #C3CAD3;
     box-sizing: border-box;
-    width: 300px;
+    width: 335px;
     height: 45px;
     outline: none;
 }
@@ -305,7 +304,7 @@
     color: #C3CAD3;
     border: 1px solid #C3CAD3;
     box-sizing: border-box;
-    width: 300px;
+    width: 335px;
     height: 45px;
     outline: none;
 }
@@ -320,7 +319,7 @@
     padding-top: 4%;
     color: #C3CAD3;
     box-sizing: border-box;
-    width: 300px;
+    width: 335px;
     height: 45px;
     outline: none;
 }
@@ -331,7 +330,6 @@
 
 #line-time{
     margin-top: 1%;
-    margin-left: 52%;
     background: none;
     font-family: Inter;
     font-style: normal;
@@ -342,8 +340,17 @@
     border: 1px solid #C3CAD3;
     box-sizing: border-box;
     border-radius: 5px;
-    width: 300px;
+    width: 335px;
     height: 45px;
     outline: none;
     padding-left: 2%;
+}
+
+.dropdowns{
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    width: 55%;
+    height: 70px;
+    margin-left: 22.5%;
 }

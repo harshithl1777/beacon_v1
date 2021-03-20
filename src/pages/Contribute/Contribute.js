@@ -1,21 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
 // import React, {useEffect, useReducer, useState} from 'react';
 import logo from "./assets/logo.svg";
 import './contribute.css';
 import { Link } from 'react-router-dom';
+import Geocoder from 'react-mapbox-gl-geocoder';
 
-const reducer = (state, action) => {
-    const {type, dummyData} = action;
-    switch(type) {
-        case 'DATA_UPLOADED':
-            return {...state, data: dummyData}
-        default:
-            return {...state, data: []}
-    }
+
+const mapAccess = {
+    mapboxApiAccessToken: "pk.eyJ1IjoibGF0Y2hhbiIsImEiOiJja21pMXZla3EwZDNmMnh0NHJ3NXR5eWl3In0.2S9WUi9cSc70L5E3cl5pFw"
+}
+ 
+const mapStyle = {
+    width: '100%',
+    height: 600
+}
+ 
+const queryParams = {
+    country: 'us'
 }
 
 
-const Contribute = () => {
+
+class Contribute extends Component {
     // const dummyData = {
     //     name: "Vishnudev",
     //     storeName: "Walmart 1500 Mavis St"
@@ -28,10 +34,24 @@ const Contribute = () => {
     //         dummyData: dummyData
     //     })
     // }
+       
+    state = {
+        viewport: {}
+    }
+ 
+    onSelected = (viewport, item) => {
+        this.setState({viewport});
+        console.log('Selected: ', item)
+    }
+ 
+    render() {
+        const {viewport} = this.state
+        
     return (
         <div className='con-section'>
             <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"></link>
             <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet"></link>
+            
             <div className="top-line"></div>
                 <img className="logo" src={logo} alt="logo"></img>
                 <h1 className="title">Thanks for contributing! Let’s get you started.</h1>
@@ -43,7 +63,11 @@ const Contribute = () => {
                 
                 <div className="con-form">
                     <h1 className="con-form__text">What store did you shop at?</h1>
-                    <input className="con-form__query" type="text" placeholder="Start typing the store’s name and address"></input>
+                    <Geocoder
+                    {...mapAccess} onSelected={this.onSelected} viewport={viewport} hideOnSelect={true}
+                    queryParams={queryParams}
+                    />
+                    {/* <input className="con-form__query" type="text" placeholder="Start typing the store’s name and address"></input> */}
                     <br></br>
                     <button className="con-form__check-box"/>
                     <h1 className="check-box__text">By filling this form, I allow Beacon to provide this data to other shoppers.</h1>
@@ -55,6 +79,7 @@ const Contribute = () => {
         
         </div>
     );
+    }
 }
 
 

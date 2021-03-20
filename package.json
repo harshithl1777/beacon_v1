@@ -23,6 +23,8 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
+    "react-map-gl": "^6.1.10",
+    "react-mapbox-gl-geocoder": "^1.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-status-alert": "^1.1.0",

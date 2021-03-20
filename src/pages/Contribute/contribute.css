@@ -1,5 +1,6 @@
 :root {
     font-size: 10px;
+    overflow-x: hidden;
   }
 
 
@@ -62,20 +63,40 @@
     line-height: 26px;
 }
 
-.con-form__query{
-    width: 50%;
+.react-geocoder{
+    width: 15650px!important;
     margin-left: 25%;
     margin-top:1%;
-    height: 50px;
+    line-height: 50px;
+    padding-right: 10000px;
 
-    border: 1px solid #C3CAD3;
     box-sizing: border-box;
     border-radius: 5px;
     
     color: #C3CAD3;
     font-size: 1.5rem;
+    font-family: Inter;
+}
+
+.react-geocoder-results{
+    width: 620px;
+    border: 1px solid #C3CAD3;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 50px;
+}
+
+.react-geocoder-item{
+    width: 620px;
+    border: 1px solid #C3CAD3;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 50px;
+    color: #C3CAD3;
+    font-size: 1.5rem;
     padding-left: 2%;
     font-family: Inter;
+
 }
 
 .con-form__query::placeholder{
