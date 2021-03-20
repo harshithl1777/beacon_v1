@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Switch, Route, BrowserRouter } from 'react-router-dom';
 import firebase from "firebase/app";
 import "firebase/auth";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import InteriorNav from './InteriorNav/InteriorNav';
 import Search from '../pages/Search/Search';
@@ -9,6 +10,7 @@ import Signup from '../pages/Signup/Signup';
 import Login from '../pages/Login/Login';
 import Contribute from '../pages/Contribute/Contribute';
 import StockData from '../pages/StockData/StockData';
+import LinesData from '../pages/LinesData/LinesData';
 import Thanks from '../pages/Thanks/Thanks';
 import OutOfCredits from '../pages/OutOfCredits/OutOfCredits';
 import Radar from '../pages/Radar/Radar';
@@ -45,6 +47,7 @@ class App extends Component {
                         <Route path='/contribute'>
                             <Route exact path='/contribute/1' component={Contribute}/>
                             <Route exact path="/contribute/2" component={StockData}/>
+                            <Route exact path="/contribute/2.1" component={LinesData}/>
                             <Route exact path="/contribute/3" component={Thanks}/>
                             <Route exact path="/contribute/4" component={OutOfCredits}/>
                         </Route>

@@ -1,8 +1,33 @@
 import React from 'react';
+// import React, {useEffect, useReducer, useState} from 'react';
 import logo from "./assets/logo.svg";
 import './contribute.css';
+import { Link } from 'react-router-dom';
+
+const reducer = (state, action) => {
+    const {type, dummyData} = action;
+    switch(type) {
+        case 'DATA_UPLOADED':
+            return {...state, data: dummyData}
+        default:
+            return {...state, data: []}
+    }
+}
+
 
 const Contribute = () => {
+    // const dummyData = {
+    //     name: "Vishnudev",
+    //     storeName: "Walmart 1500 Mavis St"
+    // }
+    
+    // const fetchFromBackend =(props) => {
+    //     const [state, dispatch] = useReducer(reducer, {data:[]});
+    //     dispatch({
+    //         type: 'DATA_UPLOADED',
+    //         dummyData: dummyData
+    //     })
+    // }
     return (
         <div className='con-section'>
             <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"></link>
@@ -22,7 +47,9 @@ const Contribute = () => {
                     <br></br>
                     <button className="con-form__check-box"/>
                     <h1 className="check-box__text">By filling this form, I allow Beacon to provide this data to other shoppers.</h1>
-                    <button className="form__start" type="submit">Start the contribution form</button>
+                    {/* <Link to={{ pathname: '/app/stockdata', state:{name: data.name, storeName: data.storeName }}}> */}
+                        <button className="form__start" type="submit">Start the contribution form</button>
+                    {/* </Link> */}
                 </div>      
                     
         

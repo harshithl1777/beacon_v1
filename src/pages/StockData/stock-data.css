@@ -93,19 +93,42 @@
     color: #32D3CA;
 }
 
+.add-product__prod{
+    height: 45px;
+    width: 19%;
+    margin-left: 20%;
+    margin-top: 1%;
+    border: 1px solid #C3CAD3;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+
+    color: #C3CAD3;
+
+}
+
+
 
 .add-product__btns{
+    margin-left: 40%;
+    width: 41%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     height:45px;
-    margin-top: 1%;
+    margin-top: -45px;
 }
 
 
 .add-product__empty{
     margin: auto;
     height: 45px;
-    width: 8%;
+    width: 110px;
     border: none;
     background: rgba(253, 87, 77, 0.15);
     border-radius: 5px;
@@ -124,16 +147,16 @@
 .add-product__low{
     margin: auto;
     height: 45px;
-    width: 8%;
+    width: 100px;
     border: none;
-    background: rgba(253, 87, 77, 0.15);
+    background: rgba(244, 179, 12, 0.15);
     border-radius: 5px;
     font-family: Inter;
     font-style: normal;
     font-weight: 800;
     font-size: 16px;
 
-    color: #FD574D;
+    color: #F4B30C;
 }
 
 .add-product__low:focus{
@@ -143,16 +166,16 @@
 .add-product__medium{
     margin: auto;
     height: 45px;
-    width: 8%;
+    width: 120px;
     border: none;
-    background: rgba(253, 87, 77, 0.15);
+    background: rgba(44, 180, 239, 0.15);
     border-radius: 5px;
     font-family: Inter;
     font-style: normal;
     font-weight: 800;
     font-size: 16px;
 
-    color: #FD574D;
+    color: #2CB4EF;
 }
 
 .add-product__medium:focus{
@@ -162,16 +185,16 @@
 .add-product__high{
     margin: auto;
     height: 45px;
-    width: 8%;
+    width: 100px;
     border: none;
-    background: rgba(253, 87, 77, 0.15);
+    background: rgba(65, 214, 160, 0.15);
     border-radius: 5px;
     font-family: Inter;
     font-style: normal;
     font-weight: 800;
     font-size: 16px;
 
-    color: #FD574D;
+    color: #41D6A0;
 }
 
 .add-product__high:focus{
@@ -187,6 +210,24 @@
     margin-top: -2%;
     
     text-align: center;
+}
+
+.add-product__next{
+    background: #001C36;
+    border-radius: 4px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    width: 60%;
+    height: 45px;
+    margin-left: 20%;
+    margin-top: 3%;
+
+    text-align: center;
+
+    color: #FFFFFF;
 }
 
 @media screen and (max-width:1150px) {
