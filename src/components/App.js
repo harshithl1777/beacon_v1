@@ -11,6 +11,8 @@ import Contribute from '../pages/Contribute/Contribute';
 import StockData from '../pages/StockData/StockData';
 import Thanks from '../pages/Thanks/Thanks';
 import OutOfCredits from '../pages/OutOfCredits/OutOfCredits';
+import Radar from '../pages/Radar/Radar';
+import NoResults from '../components/NoResults/NoResults';
 
 import LandingPage from '../pages/LandingPage/LandingPage';
 import AboutPage from '../pages/AboutUsPage/AboutUsPage';
@@ -49,6 +51,8 @@ class App extends Component {
                         <Route path="/app">
                             <InteriorNav />
                             <Route exact path='/app/search' render={(props) => <Search {...props} />} />
+                            <Route exact path='/app/contributions' render={(props) => <Radar {...props} />} />
+                            <Route exact path='/app/noresultsTEST' component={NoResults} />
                         </Route>
                     </Switch>
                 </BrowserRouter>
