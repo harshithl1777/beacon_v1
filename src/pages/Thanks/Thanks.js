@@ -15,7 +15,7 @@ const Thanks = () => {
                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
                   ut labore et dolore magna aliqua ut enim ad minim veniam.
                    Lorem ipsum dolor sit amet, co.</h1>
-            <img className="contributed" src={contributed}></img>
+            <img className="contributed" alt="contributed" src={contributed}></img>
             <button className="gtg">I'm good to go</button>
                     
         
