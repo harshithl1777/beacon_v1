@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Switch, Route, BrowserRouter } from 'react-router-dom';
 import firebase from "firebase/app";
 import "firebase/auth";
 
@@ -29,7 +29,6 @@ class App extends Component {
           };
         firebase.initializeApp(firebaseConfig);
     }
-
     render() {
         return (
             <div className="App">   

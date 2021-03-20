@@ -1,0 +1,117 @@
+.interior-nav {
+    width: 100%;
+    height: 68px;
+    background: #001C36;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.interior-nav__logo:hover {
+    cursor: pointer;
+    filter: opacity(0.85);
+}
+
+.interior-nav__right-items  {
+    width: 335px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    justify-content: space-between;
+}
+
+.interior-nav__nav-btn {
+    height: 68px;
+    padding: 23px 25px 23px 25px;
+    background: transparent;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    border-bottom: 3px solid #32D3CA;
+    color: #FFFFFF;
+    z-index: 1;
+    
+}
+
+.interior-nav__nav-btn:hover {
+    background:rgba(50, 211, 202, 0.1);
+    filter: none;
+}
+
+.interior-nav__left-items {
+    margin-right: 24px;
+    height: 100%;
+    width: 397px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.interior-nav__profile-pic:hover {
+    cursor: pointer;
+    filter: opacity(0.85);
+}
+
+
+
+.interior-nav__feedback:hover {
+    cursor: pointer;
+    filter: opacity(0.85);
+}
+
+.interior-nav__contribute-btn {
+    background: #32D3CA;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding: 8px 13px 9px 13px;
+    align-items: center;
+}
+
+.interior-nav__contribute-content {
+    width: 99px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 23px;
+    justify-content: space-between;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #001C36;
+}
+
+.interior-nav__credits {
+    background: #F4B30C;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 11px 9px 10px;
+    width: 120px;
+    justify-content: center;
+}
+
+.interior-nav__credits-content {
+    width: 109px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 23px;
+    justify-content: space-between;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #001C36;
+}
+

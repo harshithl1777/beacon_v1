@@ -21,3 +21,7 @@ button:hover {
 input:focus, button:focus {
     outline: none;
 }
+
+.status-alert__box.is-green-success {
+    background-color: #41D6A0;
+}
