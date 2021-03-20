@@ -1,8 +1,6 @@
 import React from 'react';
 import logo from "./assets/logo.svg";
 import './linesdata.css';
-import {Dropdown, DropdownButton} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import dropdownIcon from './assets/dropdown.svg';
 
 const LinesData = () => {

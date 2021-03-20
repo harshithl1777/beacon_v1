@@ -5,10 +5,14 @@ require('dotenv').config({ path: './config/.env' });
 const path = require('path');
 
 const auth = require('./routes/auth.js');
+const contributions = require('./routes/contributions.js');
+const stores = require('./routes/stores.js');
 
 // mount required routes and parsing libs
 app.use(bodyParser.json());
 app.use(auth);
+app.use(contributions);
+app.use(stores);
 
 // mount build files to server
 app.use(express.static(path.join(__dirname, '..', 'build')));

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Switch, Route, BrowserRouter } from 'react-router-dom';
 import firebase from "firebase/app";
 import "firebase/auth";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import InteriorNav from './InteriorNav/InteriorNav';
 import Search from '../pages/Search/Search';

@@ -16,12 +16,21 @@ const mapStyle = {
 }
  
 const queryParams = {
-    country: 'us'
+    country: 'ca',
+    region: 'on',
+    types: 'poi',
+    fuzzyMath: true,
+    limit: 4, 
 }
 
 
 
 class Contribute extends Component {
+    constructor() {
+        super();
+        this.state = { geocoderValue: '' };
+    }
+
     // const dummyData = {
     //     name: "Vishnudev",
     //     storeName: "Walmart 1500 Mavis St"
@@ -34,18 +43,25 @@ class Contribute extends Component {
     //         dummyData: dummyData
     //     })
     // }
+
+
        
     state = {
         viewport: {}
     }
  
     onSelected = (viewport, item) => {
+        this.name = 'vik';
         this.setState({viewport});
         console.log('Selected: ', item)
     }
+
+    renderBottomZ = () => {
+        return (this.state.geocoderFocus) ? { zIndex: -1 } : { zIndex: 0 };
+    }
  
     render() {
-        const {viewport} = this.state
+        const {viewport} = this.state;
         
     return (
         <div className='con-section'>
@@ -60,19 +76,20 @@ class Contribute extends Component {
                   incididunt ut labore et dolore magna aliqua ut
                    enim ad minim veniam. Lorem ipsum dolor sit amet, co.</h1>
 
-                
                 <div className="con-form">
                     <h1 className="con-form__text">What store did you shop at?</h1>
                     <Geocoder
-                    {...mapAccess} onSelected={this.onSelected} viewport={viewport} hideOnSelect={true}
-                    queryParams={queryParams}
+                    {...mapAccess} onSelected={(viewport, item) => console.log(viewport, item)} updateInputOnSelect={true} viewport={this.state.geocoderValue} hideOnSelect={true}
+                    queryParams={queryParams} 
                     />
                     {/* <input className="con-form__query" type="text" placeholder="Start typing the store’s name and address"></input> */}
                     <br></br>
-                    <button className="con-form__check-box"/>
-                    <h1 className="check-box__text">By filling this form, I allow Beacon to provide this data to other shoppers.</h1>
+                    <div className='con-form__check-box-wrapper'>
+                        <button className="con-form__check-box"/>
+                        <h1 className="check-box__text">By filling this form, I allow Beacon to provide this data to other shoppers.</h1>
+                    </div>
                     {/* <Link to={{ pathname: '/app/stockdata', state:{name: data.name, storeName: data.storeName }}}> */}
-                        <button className="form__start" type="submit">Start the contribution form</button>
+                    <button className="form__start-cont" type="submit">Start the contribution form</button>
                     {/* </Link> */}
                 </div>      
                     
