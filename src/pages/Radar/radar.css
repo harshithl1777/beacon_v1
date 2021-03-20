@@ -1,0 +1,244 @@
+:root {
+    font-size: 10px;
+  }
+
+.radar{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.radar__title{
+    margin-top: 8%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 42px;
+    margin-left: 8%;
+
+
+    color: #001C36;
+}
+
+.radar__text{
+    margin-left: 8%;
+    width: 70%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+
+    letter-spacing: 0.05em;
+
+    color: #001C36;
+}
+
+.radar__cont{
+    position: absolute;
+    margin-top: 2%;
+    width: 84%;
+    left: 8%;
+}
+
+.cont__fixed{
+    background: #001C36;
+    border-radius: 10px 10px 0px 0px;
+    height: 52px;
+}
+
+.fixed__check{
+    border: 1px solid #FFFFFF;
+    background: none;
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 15px;
+    width: 15px;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.fixed__img{
+    position: absolute;
+    top: 17px;
+    left: 5.5%;
+}
+
+.fixed__num-cont{
+    margin-left: 9%;
+    margin-top: -1.75%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #FFFFFF;
+}
+
+.fixed__stock-cont{
+    position: absolute;
+    top: 15px;
+    background: #F4B30C;
+    margin-left: 75%;
+    height: 25px;
+    width: 10%;
+    border-radius: 4px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+
+    color: #001C36;
+}
+
+.fixed__lines-cont{
+    position: absolute;
+    top: 15px;
+    margin-left: 87%;
+    background: #2CB4EF;
+    height: 25px;
+    width: 10%;
+    border-radius: 4px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+
+    color: #001C36;
+}
+
+.cont__create{
+    background: white;
+    display: flex;
+    height: 52px;
+    border: 1px solid #C3CAD3;
+}
+
+.create__check{
+    border: 1px solid #C3CAD3;
+    background: none;
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 15px;
+    width: 15px;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.create__title{
+    margin-left: 3.8%;
+    margin-top: .8%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+
+
+
+    color: #001C36;
+}
+
+.title__address{
+    margin-top: 2.8%;
+    margin-left: -22.8%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.02em;
+
+    color: rgba(0, 28, 54, 0.5);
+}
+
+.create__date{
+    margin-top: 1.5%;
+    margin-left: 10%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #001C36;
+}
+
+.create__lines-cont{
+    margin-left: 10%;
+    margin-top: 1.2%;
+    height: 25px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+
+    color: #2CB4EF;
+    background: rgba(44, 180, 239, 0.15);
+    border-radius: 4px;
+}
+
+.create__stock-cont{
+    margin-left: 1%;
+    margin-top: 1.2%;
+    height: 25px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+
+    color: #F4B30C;
+    background: rgba(244, 179, 12, 0.2);
+    border-radius: 4px;
+}
+
+.create__item-1{
+    margin-left: 1%;
+    margin-top: 1.2%;
+    height: 25px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+
+    color: white;
+    background: #001C36;
+    border-radius: 4px;
+}
+.create__item-2{
+    margin-left: 1%;
+    margin-top: 1.2%;
+    width: 5%;
+    height: 25px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+
+    color: white;
+    background: #001C36;
+    border-radius: 4px;
+}
+
+.create__dots{
+    margin-left: 1%;
+    margin-top: 1.2%;
+    width: 3%;
+    height: 25px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+
+    color: white;
+    background: #001C36;
+    border-radius: 4px;
+}
