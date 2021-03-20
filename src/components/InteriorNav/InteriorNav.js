@@ -13,15 +13,15 @@ import './interiornav.css';
 class InteriorNav extends Component {
     constructor() {
         super();
-        this.state = { currentPage: 0 };
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                StatusAlertService.removeAllAlerts();
-                StatusAlertService.showSuccess(`Logged in. Welcome back ${user.email}!`);
+        this.state = { currentPage: 0, userID: null };
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user && !this.state.userID) {
+                console.log('Logged in');
+                this.setState({ userID: user.uid });
             } else {
                 window.location.href = 'https://trybeacon.herokuapp.com/auth/login';
             }
-          });
+        });
     }
 
     renderNavStyles = (pageNum) => {

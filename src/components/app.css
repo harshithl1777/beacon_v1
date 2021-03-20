@@ -25,3 +25,11 @@ input:focus, button:focus {
 .status-alert__box.is-green-success {
     background-color: #41D6A0;
 }
+
+.text--sea {
+    color: #32D3CA;
+}
+
+h3 {
+    margin-bottom: 0;
+}

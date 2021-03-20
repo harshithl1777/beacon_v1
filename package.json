@@ -14,6 +14,7 @@
     "express": "^4.17.1",
     "firebase": "^8.3.0",
     "firebase-admin": "^9.5.0",
+    "mapbox-gl": "^2.1.1",
     "mongodb": "^3.6.5",
     "nodemon": "^2.0.7",
     "passport-auth-token": "^1.0.1",
