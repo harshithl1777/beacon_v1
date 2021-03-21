@@ -83,12 +83,10 @@ const newIndex = async (callback) => {
 }
 
 const queryStores = async (origins, distance, callback) => {
-    console.log(origins);
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     try {
         await client.connect();
         const stores = client.db().collection('stores');
-        console.log(distance, origins);
         const query = {
             "location": {
               $near: {
@@ -108,6 +106,7 @@ const queryStores = async (origins, distance, callback) => {
         client.close();
     }
 }
+
 
 module.exports = {
     replaceStore,

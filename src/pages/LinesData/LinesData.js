@@ -11,7 +11,7 @@ const LinesData = (props) => {
         people: "",
         speed: "",
         time: ""
-    })
+    });
 
     console.log(props);
     var nameProp = props.location.state.name;
