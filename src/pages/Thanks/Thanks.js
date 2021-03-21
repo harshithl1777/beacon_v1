@@ -3,7 +3,8 @@ import logo from "./assets/logo.svg";
 import contributed from "./assets/contributed.svg";
 import './thanks.css';
 
-const Thanks = () => {
+const Thanks = (props) => {
+    console.log(props);
     return (
         <div className='thanks-section'>
             <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"></link>

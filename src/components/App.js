@@ -44,11 +44,11 @@ class App extends Component {
                             <Route exact path='/auth/signup' component={Signup}/>
                         </Route>
                         <Route path='/contribute'>
-                            <Route exact path='/contribute/1' component={Contribute}/>
-                            <Route exact path="/contribute/2" component={StockData}/>
-                            <Route exact path="/contribute/2.1" component={LinesData}/>
-                            <Route exact path="/contribute/3" component={Thanks}/>
-                            <Route exact path="/contribute/4" component={OutOfCredits}/>
+                            <Route exact path='/contribute/1' render={(props) => <Contribute {...props} />} />
+                            <Route exact path="/contribute/2" render={(props) => <StockData {...props} />}/>
+                            <Route exact path="/contribute/2.1" render={(props) => <LinesData {...props} />}/>
+                            <Route exact path="/contribute/3" render={(props) => <Thanks {...props} />}/>
+                            <Route exact path="/contribute/4" render={(props) => <OutOfCredits {...props} />}/>
                         </Route>
                         <Route path="/app">
                             <InteriorNav />

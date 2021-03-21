@@ -52,7 +52,6 @@
 .stock-levels__title{
     text-align: center;
     margin-right: 34%;
-    margin-top: -3.8%;
 
     font-family: Inter;
     font-style: normal;
@@ -189,7 +188,7 @@
     padding-left: 2%;
 }
 
-.stock-price{
+#stock-price{
     margin-top: 1%;
     background: none;
     font-family: Inter;
@@ -229,7 +228,7 @@
     width: 60%;
     height: 45px;
     margin-left: 20%;
-    margin-top: 3%;
+    margin-top: 1%;
 
     text-align: center;
 

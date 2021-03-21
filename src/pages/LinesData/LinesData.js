@@ -1,55 +1,78 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from "./assets/logo.svg";
+import { Link } from 'react-router-dom';
 import './linesdata.css';
+import {Dropdown, DropdownButton} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import dropdownIcon from './assets/dropdown.svg';
 
-const LinesData = () => {
+const LinesData = (props) => {
+    const [line, setLine] = useState({
+        people: "",
+        speed: "",
+        time: ""
+    })
+
+    console.log(props);
+    var nameProp = props.location.state.name;
+    var storeNameProp = props.location.state.storeName;
+    var idProp = props.location.state.id;
+    var stockProp = props.location.state.stock;
     var dropTitle1 = "Select a speed option...";
     var dropTitle2 = "Select a time span...";
 
-    const handleSpeed = (speedVal) => {
-        if (speedVal == "slow"){
-            dropTitle1 = "slow";
+
+    const handleLine = (input) => {
+        console.log(input);
+        var people = "";
+        if (input == "<5"){
+            people = "0 to 5";
         }
-        else if (speedVal == "avg"){
-            dropTitle1 = "avg";
+        else if (input == "<25"){
+            people = "6 to 25"
         }
-        else if (speedVal == "fast"){
-            dropTitle1 = "fast";
+        else if (input == "<50"){
+            people = "26 to 50"
         }
-        else{
-            return null;
+        else if (input == "<75"){
+            people = "51 to 75"
         }
+        else if (input == ">76"){
+            people = "76+"
+        }
+        handleEverything("people", people);
+
+
+    }
+
+    const handleEverything = (name, val) => {
+        setLine({...line, [name]: val});
     }
 
     const handleLineTime = (lineTime) => {
+        var time = "";
         if (lineTime == "no-line"){
-            dropTitle2 = "No Line";
+            time = "No Line";
         }
         else if (lineTime == "<5"){
-            dropTitle2 = "Less than 5 mins";
+            time = "Less than 5 mins";
         }
         else if (lineTime == "<15"){
-            dropTitle2 = "Less than 15 mins";
+            time = "Less than 15 mins";   
         }
         else if (lineTime == "<30"){
-            dropTitle2 = "Less than 30 mins";
+            time = "Less than 30 mins";
         }
         else if (lineTime == ">31"){
-            dropTitle2 = "More than 30 mins";
+            time = "More than 30 mins";
         }
-        else{
-            return null;
-        }
+        handleEverything("time", time);
     }
-
 
     return (
         <div className='lines-section'>
             <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"></link>
             <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet"></link>
-            <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
-            <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
             <div className="lines-top-line"></div>
                 <img className="logo" src={logo} alt="logo"></img>
                 <h1 className="lines-title">Lines Data</h1>
@@ -62,31 +85,33 @@ const LinesData = () => {
                     <h1 className="lines-data__title">How many people were in line outside the store?</h1> 
                     <br></br>
                     <div className="lines-data__btns">
-                        <button className="lines-data__0to5">0 to 5</button>
-                        <button className="lines-data__6to25">6 to 25</button>
-                        <button className="lines-data__26to50">26 to 50</button>
-                        <button className="lines-data__51to75">51 to 75</button>
-                        <button className="lines-data__76add">76+</button>
+                        <button id="1" className="lines-data__0to5" onClick={() => handleLine("<0")}>0 to 5</button>
+                        <button id="2" className="lines-data__6to25" onClick={() => handleLine("<25")}>6 to 25</button>
+                        <button id="3" className="lines-data__26to50" onClick={() => handleLine("<50")}>26 to 50</button>
+                        <button id="4" className="lines-data__51to75" onClick={() => handleLine("<75")}>51 to 75</button>
+                        <button id="5" className="lines-data__76add" onClick={() => handleLine(">76")}>76+</button>
                     </div>
                     <h1 className="lines-data__title-2">How fast is the line moving?</h1>
                     <h1 className="lines-data__title-3">How long did you spend in the line?</h1>
                         <div className="dropdowns">
-                        <select id="dropdown-basic">
-                            <option disabled selected>{dropTitle1}</option>
-                            <option onClick={() => handleSpeed("slow")}>Slow</option>
-                            <option onClick={() => handleSpeed("avg")}>Average</option>
-                            <option onClick={() => handleSpeed("fast")}>Fast</option>
+                        <select id="dropdown-basic" onChange={e => handleEverything("speed", e.target.value)}>
+                            <option disabled selected>{line.speed}</option>
+                            <option value="slow">Slow</option>
+                            <option value="avg">Average</option>
+                            <option value="fast">Fast</option>
                         </select>
-                        <select id="line-time">
-                            <option disabled selected>{dropTitle2}</option>
-                            <option onClick={() => handleLineTime("no-line")}>No Line</option>
-                            <option onClick={() => handleLineTime("<5")}>Less than 5 mins</option>
-                            <option onClick={() => handleLineTime("<15")}>Less than 15 mins</option>
-                            <option onClick={() => handleLineTime("<30")}>Less than 30 mins</option>
-                            <option onClick={() => handleLineTime(">31")}>More than 31 mins</option>
+                        <select id="line-time" onChange={e => handleLineTime(e.target.value)}>
+                            <option disabled selected>{line.time}</option>
+                            <option value="no-line" >No Line</option>
+                            <option value="<5" >Less than 5 mins</option>
+                            <option value="<15" >Less than 15 mins</option>
+                            <option value="<30" >Less than 30 mins</option>
+                            <option value=">31" >More than 31 mins</option>
                         </select>
                         </div>
+                        <Link to={{ pathname: '/contribute/3', state:{name: nameProp, storeName: storeNameProp, stock: stockProp, pplInLine: line.people, lineSpeed: line.speed, waitTime: line.time }}}>
                     <button className="add-product__next">Continue to the next step</button>
+                    </Link>
                 </div>      
                     
         
