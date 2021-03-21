@@ -4,6 +4,7 @@ import Geocoder from 'react-mapbox-gl-geocoder';
 import StatusAlert, { StatusAlertService } from 'react-status-alert';
 import logo from "./assets/logo.svg";
 import './contribute.css';
+import moment from 'moment';
 
 
 
@@ -38,16 +39,24 @@ class Contribute extends Component {
     }
 
     onSelected = (viewport, item) => {
+        console.log(item);
+        var today = moment().format('MMM D, h:mm a');
+
+
         if (this.state.checkBoxClicked) {
             this.setState({id: item.id,
+                time: today,
+                name: "TEST",
                 storeName: item.text,
-                address: item.address,
-                location: [item.latitude, item.longitude], filledOut: true });
+                address: item.properties. address,
+                location: [item.center], filledOut: true });
         } else {
             this.setState({id: item.id,
+                time: today,
+                name: "TEST",
                 storeName: item.text,
-                address: item.address,
-                location: [item.latitude, item.longitude] });
+                address: item.properties.address,
+                location: [item.center] });
         }
 
     }
@@ -96,8 +105,8 @@ class Contribute extends Component {
                         <input onChange={() => this.checkboxClicked()} type='checkbox' className="con-form__check-box"/>
                         <h1 className="check-box__text">By filling this form, I allow Beacon to provide this data to other shoppers.</h1>
                     </div>
-                    <Link to={{ pathname: '/contribute/2', state:{location: this.state.location, address: this.state.address, storeName: this.state.storeName , id: this.state.id}}}>
-                        <button ref={this.startBtn} onClick={() => this.startForm()} className="form__start-cont" type="submit" disabled={!this.state.filledOut}>Start the contribution form</button>
+                    <Link to={{ pathname: '/contribute/2', state:{name: this.state.name, location: this.state.location, address: this.state.address, storeName: this.state.storeName , id: this.state.id, time: this.state.time}}}>
+                        <button ref={this.startBtn} className="form__start-cont" type="submit" disabled={!this.state.filledOut}>Start the contribution form</button>
                     </Link>
                 </div>
         </div>

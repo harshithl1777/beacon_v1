@@ -20,7 +20,9 @@ const StockData = (props) => {
     var nameProp = props.location.state.name;
     var storeNameProp = props.location.state.storeName;
     var idProp = props.location.state.id;
-    // var timePassed = props.location.state.time;
+    var timeProp = props.location.state.time;
+    var locationProp = props.location.state.location;
+    var addressProp = props.location.state.address;
 
     const renderProductOptions = () => {
         return products.map((product, index) => {
@@ -89,7 +91,7 @@ const StockData = (props) => {
                     <h1 className="stock-levels__text">Add as many products as you like and select the appropriate level.</h1>
                     <br></br>
                     {renderProductInputs()}
-                    <Link to={{ pathname: '/contribute/2.1', state:{name: nameProp, storeName: storeNameProp, stock: data }}}>
+                    <Link to={{ pathname: '/contribute/2.1', state:{name: nameProp, storeName: storeNameProp, time: timeProp, id: idProp, location: locationProp, address: addressProp, stock: data }}}>
                         <button className="add-product__next" onClick={() => consoleFunc()}>Continue to the next step</button>
                     </Link>
                 </div>
