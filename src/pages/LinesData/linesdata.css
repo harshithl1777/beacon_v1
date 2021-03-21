@@ -92,12 +92,12 @@
     color: #C3CAD3;
 }
 
-.lines-data__0to5:focus{
+/* .lines-data__0to5:focus{
     outline: none;
     background: rgba(50, 211, 202, 0.08);
     border: 1px solid #32D3CA;
     color: #32D3CA;
-}
+} */
 
 .lines-data__6to25{
     background: none;

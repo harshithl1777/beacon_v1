@@ -12,7 +12,6 @@ const LinesData = (props) => {
         speed: "",
         time: ""
     })
-
     console.log(props);
     var nameProp = props.location.state.name;
     var storeNameProp = props.location.state.storeName;
@@ -25,51 +24,14 @@ const LinesData = (props) => {
     var dropTitle2 = "Select a time span...";
 
 
-    const handleLine = (input) => {
-        console.log(input);
-        var people = "";
-        if (input == "<5"){
-            people = "0 to 5";
-        }
-        else if (input == "<25"){
-            people = "6 to 25"
-        }
-        else if (input == "<50"){
-            people = "26 to 50"
-        }
-        else if (input == "<75"){
-            people = "51 to 75"
-        }
-        else if (input == ">76"){
-            people = "76+"
-        }
-        handleEverything("people", people);
-
-
-    }
-
     const handleEverything = (name, val) => {
         setLine({...line, [name]: val});
     }
 
-    const handleLineTime = (lineTime) => {
-        var time = "";
-        if (lineTime == "no-line"){
-            time = "No Line";
+    const renderStyle = (peopleVal) => {
+        if (peopleVal === line.people) {
+            return { outline: 'none', background: 'rgba(50, 211, 202, 0.08)', border: '1px solid #32D3CA', color: '#32D3CA' }
         }
-        else if (lineTime == "<5"){
-            time = "Less than 5 mins";
-        }
-        else if (lineTime == "<15"){
-            time = "Less than 15 mins";   
-        }
-        else if (lineTime == "<30"){
-            time = "Less than 30 mins";
-        }
-        else if (lineTime == ">31"){
-            time = "More than 30 mins";
-        }
-        handleEverything("time", time);
     }
 
     return (
@@ -88,11 +50,11 @@ const LinesData = (props) => {
                     <h1 className="lines-data__title">How many people were in line outside the store?</h1> 
                     <br></br>
                     <div className="lines-data__btns">
-                        <button id="1" className="lines-data__0to5" onClick={() => handleLine("<5")}>0 to 5</button>
-                        <button id="2" className="lines-data__6to25" onClick={() => handleLine("<25")}>6 to 25</button>
-                        <button id="3" className="lines-data__26to50" onClick={() => handleLine("<50")}>26 to 50</button>
-                        <button id="4" className="lines-data__51to75" onClick={() => handleLine("<75")}>51 to 75</button>
-                        <button id="5" className="lines-data__76add" onClick={() => handleLine(">76")}>76+</button>
+                        <button style={renderStyle('0 to 5')} id="1" className="lines-data__0to5" onClick={() => handleEverything("people", "0 to 5")}>0 to 5</button>
+                        <button style={renderStyle("6 to 25")} id="2" className="lines-data__6to25" onClick={() => handleEverything("people", "6 to 25")}>6 to 25</button>
+                        <button style={renderStyle("26 to 50")} id="3" className="lines-data__26to50" onClick={() => handleEverything("people", "26 to 50")}>26 to 50</button>
+                        <button style={renderStyle("51 to 75")} id="4" className="lines-data__51to75" onClick={() => handleEverything("people", "51 to 75")}>51 to 75</button>
+                        <button style={renderStyle("76+")} id="5" className="lines-data__76add" onClick={() => handleEverything("people", "76+")}>76+</button>
                     </div>
                     <h1 className="lines-data__title-2">How fast is the line moving?</h1>
                     <h1 className="lines-data__title-3">How long did you spend in the line?</h1>
@@ -103,13 +65,13 @@ const LinesData = (props) => {
                             <option value="avg">Average</option>
                             <option value="fast">Fast</option>
                         </select>
-                        <select id="line-time" onChange={e => handleLineTime(e.target.value)}>
+                        <select id="line-time" onChange={e => handleEverything("time", e.target.value)}>
                             <option disabled selected>{line.time}</option>
-                            <option value="no-line" >No Line</option>
-                            <option value="<5" >Less than 5 mins</option>
-                            <option value="<15" >Less than 15 mins</option>
-                            <option value="<30" >Less than 30 mins</option>
-                            <option value=">31" >More than 31 mins</option>
+                            <option value="No Line" >No Line</option>
+                            <option value="Less than 5 mins" >Less than 5 mins</option>
+                            <option value="Less than 15 mins" >Less than 15 mins</option>
+                            <option value="Less than 30 mins" >Less than 30 mins</option>
+                            <option value="More than 31 Mins" >More than 31 mins</option>
                         </select>
                         </div>
                         <Link to={{ pathname: '/contribute/3', state:{name: nameProp, storeName: storeNameProp,
