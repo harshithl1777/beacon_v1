@@ -23,8 +23,6 @@ const Thanks = (props) => {
                    Lorem ipsum dolor sit amet, co.</h1>
             <img className="contributed" alt="contributed" src={contributed}></img>
             <button className="gtg">I'm good to go</button>
-                    
-        
         </div>
     );
 }
