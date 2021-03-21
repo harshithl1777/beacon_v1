@@ -1,52 +1,27 @@
-import React, {useEffect, useReducer, useState} from 'react';
+import React, { useState } from 'react';
 import logo from "./assets/logo.svg";
 import './stock-data.css';
 import { Link } from 'react-router-dom';
 
-// const reducer = (state, action) => {
-//     const {type, dummyData} = action;
-//     switch(type) {
-//         case 'DATA_UPLOADED':
-//             return {...state, data: dummyData}
-//         default:
-//             return {...state, data: []}
-//     }
-// }
+const StockData = (props) => {
+    const [inputNum, setInputNum] = useState(3);
+    const [data, setData] = useState([
+        { prodName: "Select product", price: '', level: "Select level", demand: "Select demand"},
+        { prodName: "Select product", price: '', level: "Select level", demand: "Select demand"},
+        { prodName: "Select product", price: '', level: "Select level", demand: "Select demand"},
+        { prodName: "Select product", price: '', level: "Select level", demand: "Select demand"},
+    ]);
 
-const StockData = () => {
-    // var nameProp = props.location.state.name;
-    // var storeNameProp = props.location.state.storeName;
-
-    // const dummyData = {
-    //     name: nameProp,
-    //     storeName: storeNameProp,
-    // }
-    
     const products = ["Eggs", "Milk", "Bread", "Bagel", "Rice"
      ,"Onions", "Potatoes", "Apples", "Chicken", "Fish", "Beef"
      , "Pork", "Pasta", "Soup", "Pizza", "Noodles" ];
+    
+    console.log(props);
+    var nameProp = props.location.state.name;
+    var storeNameProp = props.location.state.storeName;
+    var idProp = props.location.state.id;
+    // var timePassed = props.location.state.time;
 
-    const [data, setData] = useState({
-        name: "",
-        price: 0,
-        level: "",
-        demand: "",
-        time: ""
-    });
-
-    const {
-        name,
-        price,
-        level,
-        demand,
-        time
-    } = data;
-
-    const onChangeText = (name, inputName) => {
-        setData({...data, [name]: inputName});
-    }
-
-    const [inputNum, setInputNum] = useState(3);
     const renderProductOptions = () => {
         return products.map((product, index) => {
             return <option key={index} value={product}>{product}</option>;
@@ -55,25 +30,25 @@ const StockData = () => {
     
     const renderProductInputs = () => {
         let inputArray = [];
-        for (var i = 1; i <= inputNum; i++) {
+        for (var i = 0; i <= inputNum; i++) {
             inputArray.push(i);
         }
         return inputArray.map((line) => {
             return (
-                <div key={data.name} className="stock-dropdowns">
-                    <select id="stock-dropdown-1" onChange={(e) => onChangeText("name", e.target.value) }>
-                        <option disabled selected>Select Product</option>
+                <div key={line} className='stock-dropdowns'>
+                    <select id="stock-dropdown-1" className={line} value={data.prodName}  onChange={e => onChangeText('prodName', e)}>
+                        <option disabled selected>Select product</option>
                         {renderProductOptions()}
                     </select>
-                    <select id="stock-dropdown-2" onChange={(e) => onChangeText("level", e.target.value) }>
+                    <select id="stock-dropdown-2" className={line} value={data.level} onChange={e => onChangeText('level', e)}>
                         <option disabled selected>Select Level</option>
                         <option value="low">Low</option>
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
                     </select>
-                    <input id="price" className="stock-price" placeholder="Enter Price"  onChange={(e) => onChangeText("price", e.target.value) }></input>
-                    <select id="stock-dropdown-3" onChange={(e) => onChangeText("demand", e.target.value) }>
-                        <option disabled selected>Select Demand</option>
+                    <input id="stock-price" className={line} placeholder="Enter Price" value={data.price} onChange={e => onChangeText('price', e)}></input>
+                    <select id="stock-dropdown-3" className={line} value={data.demand} onChange={e => onChangeText('demand', e)}>
+                        <option disabled selected>Select demand</option>
                         <option value="low">Low</option>
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
@@ -81,6 +56,19 @@ const StockData = () => {
                 </div>
             );
         });
+    }
+
+    const onChangeText = (inputName, e) => {
+        var line = e.target.className;
+        const newValue = e.target.value;
+        const total = data;
+        console.log(data);
+        total[line][inputName] = newValue;
+        setData(total);
+    }
+
+    const consoleFunc = () =>{
+        console.log(data);
     }
 
     return (
@@ -95,18 +83,16 @@ const StockData = () => {
                   incididunt ut labore et dolore magna aliqua ut enim
                    ad minim veniam. Lorem ipsum dolor sit amet, co.</h1>
                 <div className="stock-levels">
-                    <button className="stock-levels__add-product" onClick={() => setInputNum(inputNum+1)}>Add Product</button>
-                    <button className="stock-levels__del-product" onClick={() => setInputNum(inputNum-1)}>Delete Product</button>
+                    {/* <button className="stock-levels__add-product" onClick={() => addProduct()}>Add Product</button>
+                    <button className="stock-levels__del-product" onClick={() => delProduct()}>Delete Product</button> */}
                     <h1 className="stock-levels__title">What were the product stock levels like?</h1> 
                     <h1 className="stock-levels__text">Add as many products as you like and select the appropriate level.</h1>
                     <br></br>
                     {renderProductInputs()}
-                    {/* <Link to={{ pathname: '/app/contribute2.1', state:{name: data.name, storeName: data.storeName, }}}>
-                        <button className="add-product__next" >Continue to the next step</button>
-                    </Link> */}
-                </div>      
-                    
-        
+                    <Link to={{ pathname: '/contribute/2.1', state:{name: nameProp, storeName: storeNameProp, stock: data }}}>
+                        <button className="add-product__next" onClick={() => consoleFunc()}>Continue to the next step</button>
+                    </Link>
+                </div>
         </div>
     );
 }
