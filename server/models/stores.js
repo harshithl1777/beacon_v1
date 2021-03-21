@@ -2,61 +2,72 @@ const { MongoClient } = require('mongodb');
 const axios = require('axios');
 
 const uri = `mongodb+srv://${process.env.MONGO_DB_USER_NAME}:${process.env.MONGO_DB_USER_PW}@cluster0.h96zb.mongodb.net/web-app?retryWrites=true&w=majority`;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const updateData = async (docID, data, callback) => {
-    client.connect(err => {
-        if (!err) {
-            const stores = client.db().collection('stores');
-            stores.findOne({ _id: docID }, { projection: { _id: 0, lines: 1, stock: 1 } })
-            .then((result) => {
-                let oldData = result;
-                oldData.lines = data.lines;
-                data.stock.forEach(({ name }) => {
-                    oldData.stock.forEach((product, index) => { 
-                        if(product.name === name) {
-                            oldData.stock.splice(index, 1);
-                        }
-                    });
-                });
-                data.stock.forEach(newProduct => {
-                    oldData.stock.push(newProduct);
-                });
-                stores.updateOne({ _id: docID, $set: { stock: oldData.stock, lines: oldData.lines } });
-            })
-            .catch((err) => {
-                console.log(err);
-                // const newStore = data;
-                // newStore['followers'] = 0;
-                // collection.insertOne(newStore)
-                // .then((result) => {
-                //     client.close();
-                //     callback([result.insertedCount, uid]);
-                // })
-                // .catch((err) => {
-                //     console.log(err);
-                //     client.close();
-                //     callback([null]);
-                // });
-            });
-        } else {
-            console.log(err);
-            client.close();
-            callback([null]);
-        } 
-    });
+const replaceStore = async (data, callback) => {
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    try {
+        await client.connect();
+        const stores = client.db().collection('stores');
+        const filter = { _id: data.id };
+        const result = await stores.replaceOne(filter, data);
+        callback([result.modifiedCount]);
+    } catch(err) {
+        console.log(err);
+        callback([null]);
+    } finally {
+        client.close();
+    }
+}
+
+const getStore = async (docID, callback) => {
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    try {
+        await client.connect();
+        const stores = client.db().collection('stores');
+        const filter = { _id: docID };
+        const result = await stores.findOne(filter);
+        callback([result]);
+    } catch(err) {
+        console.log(err);
+        callback([null])
+    } finally {
+        client.close();
+    }
+}
+
+const newStore = async (data, callback) => {
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    try {
+        await client.connect();
+        const stores = client.db().collection('stores');
+        const result = await stores.insertOne(data);
+        callback([result.insertedCount]);
+    } catch(err) {
+        callback([null])
+    } finally {
+        client.close();
+    }
 }
 
 const newFollower = async (docID, callback) => {
-
-}
-
-const getData = async (docID, callback) => {
-
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    try {
+        await client.connect();
+        const stores = client.db().collection('stores');
+        const filter = { _id: docID };
+        const result = await stores.updateOne(filter, { $inc: { followers: 1 } });
+        callback([result.modifiedCount]);
+    } catch(err) {
+        callback([null]);
+        client.close();
+    } finally {
+        client.close();
+    }
 }
 
 module.exports = {
-    updateData
-    // newFollower,
-    // getData
+    replaceStore,
+    getStore,
+    newStore,
+    newFollower
 }
