@@ -17,6 +17,9 @@ const LinesData = (props) => {
     var nameProp = props.location.state.name;
     var storeNameProp = props.location.state.storeName;
     var idProp = props.location.state.id;
+    var timeProp = props.location.state.time;
+    var locationProp = props.location.state.location;
+    var addressProp = props.location.state.address;
     var stockProp = props.location.state.stock;
     var dropTitle1 = "Select a speed option...";
     var dropTitle2 = "Select a time span...";
@@ -85,7 +88,7 @@ const LinesData = (props) => {
                     <h1 className="lines-data__title">How many people were in line outside the store?</h1> 
                     <br></br>
                     <div className="lines-data__btns">
-                        <button id="1" className="lines-data__0to5" onClick={() => handleLine("<0")}>0 to 5</button>
+                        <button id="1" className="lines-data__0to5" onClick={() => handleLine("<5")}>0 to 5</button>
                         <button id="2" className="lines-data__6to25" onClick={() => handleLine("<25")}>6 to 25</button>
                         <button id="3" className="lines-data__26to50" onClick={() => handleLine("<50")}>26 to 50</button>
                         <button id="4" className="lines-data__51to75" onClick={() => handleLine("<75")}>51 to 75</button>
@@ -109,7 +112,8 @@ const LinesData = (props) => {
                             <option value=">31" >More than 31 mins</option>
                         </select>
                         </div>
-                        <Link to={{ pathname: '/contribute/3', state:{name: nameProp, storeName: storeNameProp, stock: stockProp, pplInLine: line.people, lineSpeed: line.speed, waitTime: line.time }}}>
+                        <Link to={{ pathname: '/contribute/3', state:{name: nameProp, storeName: storeNameProp,
+                             id: idProp, location: locationProp, address: addressProp, time: timeProp, stock: stockProp, pplInLine: line.people, lineSpeed: line.speed, waitTime: line.time }}}>
                     <button className="add-product__next">Continue to the next step</button>
                     </Link>
                 </div>      
