@@ -43,6 +43,7 @@ const newStore = async (data, callback) => {
         const result = await stores.insertOne(data);
         callback([result.insertedCount]);
     } catch(err) {
+        console.log(err);
         callback([null])
     } finally {
         client.close();
@@ -65,9 +66,53 @@ const newFollower = async (docID, callback) => {
     }
 }
 
+const newIndex = async (callback) => {
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    try {
+        await client.connect();
+        const stores = client.db().collection('stores');
+        const result = await stores.createIndex({location: "2dsphere"});
+        callback([1]);
+        console.log(result);
+    } catch(err) {
+        console.log(err);
+        callback([null]);
+    } finally {
+        client.close();
+    }
+}
+
+const queryStores = async (origins, distance, callback) => {
+    console.log(origins);
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    try {
+        await client.connect();
+        const stores = client.db().collection('stores');
+        console.log(distance, origins);
+        const query = {
+            "location": {
+              $near: {
+                $geometry: { type: "Point", coordinates: origins },
+                $maxDistance: distance*1000,
+              },
+            },
+          };
+        const data = [];
+        const cursor = stores.find(query);
+        await cursor.forEach((doc) => data.push(doc));
+        callback(data);
+    } catch(err) {
+        console.log(err);
+        callback([null]);
+    } finally {
+        client.close();
+    }
+}
+
 module.exports = {
     replaceStore,
     getStore,
     newStore,
-    newFollower
+    newFollower,
+    queryStores,
 }

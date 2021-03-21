@@ -138,7 +138,7 @@ input {
 }
 
 .con-form__check-box-wrapper {
-    width: 585px;
+    width: 560px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -149,9 +149,16 @@ input {
     border: 1px solid #C3CAD3;
     box-sizing: border-box;
     border-radius: 5px;
-    background: none;
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    background: #32D3CA;
+}
+
+.con-form__check-box:focus {
+    box-shadow: none;
+    cursor: pointer;
+    outline: none;
 }
 
 .check-box__text{

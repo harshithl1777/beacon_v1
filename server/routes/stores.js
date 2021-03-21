@@ -31,6 +31,20 @@ app.get('/api/stores/get', ({ query }, res) => {
     }
 });
 
+app.post('/api/stores/query', ({ body }, res) => {
+    if (body.token === process.env.API_STORE_DATA_TOKEN) {
+        stores.queryStores(body.origins, body.distance, (result) => {
+            if (result) {
+                res.status(200).send({ data: result });
+            } else {
+                res.status(500).send({ result: 'failed' });
+            }
+        });
+    } else {
+        res.status(400).send({ result: 'failed' })
+    }
+});
+
 app.post('/api/stores/new', ({ body }, res) => {
     if (body.token === process.env.API_STORE_DATA_TOKEN) {
         stores.newStore(body.data, (result) => {

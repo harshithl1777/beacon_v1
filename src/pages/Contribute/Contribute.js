@@ -1,9 +1,10 @@
-import React, {Component, useState} from 'react';
-// import React, {useEffect, useReducer, useState} from 'react';
+import React, {Component} from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import Geocoder from 'react-mapbox-gl-geocoder';
+import StatusAlert, { StatusAlertService } from 'react-status-alert';
 import logo from "./assets/logo.svg";
 import './contribute.css';
-import { Link } from 'react-router-dom';
-import Geocoder from 'react-mapbox-gl-geocoder';
+
 
 
 const mapAccess = {
@@ -28,7 +29,8 @@ const queryParams = {
 class Contribute extends Component {
     constructor() {
         super();
-        this.state = { geocoderValue: '' };
+        this.state = { id: null, storeName: null, address: null, location: null, time: null, checkBoxClicked: false, filledOut: null };
+        this.startBtn = React.createRef();
     }
 
     state = {
@@ -36,23 +38,42 @@ class Contribute extends Component {
     }
 
     onSelected = (viewport, item) => {
-        console.log(viewport, item);
-        this.setState({
-            id: item.id,
-            storeName: item.place_name,
-            name: "VishnuDikNu Poil" 
-        });
+        if (this.state.checkBoxClicked) {
+            this.setState({id: item.id,
+                storeName: item.text,
+                address: item.address,
+                location: [item.latitude, item.longitude], filledOut: true });
+        } else {
+            this.setState({id: item.id,
+                storeName: item.text,
+                address: item.address,
+                location: [item.latitude, item.longitude] });
+        }
+
     }
 
     renderBottomZ = () => {
         return (this.state.geocoderFocus) ? { zIndex: -1 } : { zIndex: 0 };
     }
+
+    renderCheckbox = () => {
+        return (this.state.checkBoxClicked) ? { background: "url('./assets/checkbox.svg')", backgroundImage: "url('./assets/checkbox.svg')", border: 'none' } : { border: '1px solid #C3CAD3' }
+    }
+
+
+    checkboxClicked = () => {
+        if (this.state.storeName) {
+            this.setState({checkBoxClicked: !this.state.checkBoxClicked, filledOut: true });
+        } else {
+            this.setState({checkBoxClicked: !this.state.checkBoxClicked });
+        }
+    }
  
     render() {
-        const {viewport} = this.state;
         
     return (
         <div className='con-section'>
+            <StatusAlert />
             <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"></link>
             <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet"></link>
             
@@ -67,20 +88,18 @@ class Contribute extends Component {
                 <div className="con-form">
                     <h1 className="con-form__text">What store did you shop at?</h1>
                     <Geocoder
-                    {...mapAccess} onSelected={(viewport, item) => this.onSelected(viewport, item)} updateInputOnSelect={true} viewport={this.state.geocoderValue} hideOnSelect={true}
-                    queryParams={queryParams}
+                        {...mapAccess} onSelected={(viewport, item) => this.onSelected(viewport, item)} updateInputOnSelect={true} hideOnSelect={true}
+                        queryParams={queryParams}
                     />
                     <br></br>
                     <div className='con-form__check-box-wrapper'>
-                        <button className="con-form__check-box"/>
+                        <input onChange={() => this.checkboxClicked()} type='checkbox' className="con-form__check-box"/>
                         <h1 className="check-box__text">By filling this form, I allow Beacon to provide this data to other shoppers.</h1>
                     </div>
-                    <Link to={{ pathname: '/contribute/2', state:{name: this.state.name, storeName: this.state.storeName , id: this.state.id}}}>
-                        <button className="form__start-cont" type="submit">Start the contribution form</button>
+                    <Link to={{ pathname: '/contribute/2', state:{location: this.state.location, address: this.state.address, storeName: this.state.storeName , id: this.state.id}}}>
+                        <button ref={this.startBtn} onClick={() => this.startForm()} className="form__start-cont" type="submit" disabled={!this.state.filledOut}>Start the contribution form</button>
                     </Link>
-                </div>      
-                    
-        
+                </div>
         </div>
     );
     }
