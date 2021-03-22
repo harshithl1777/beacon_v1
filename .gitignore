@@ -28,7 +28,5 @@ yarn-error.log*
 /server/test.js
 
 #env variables
-.env
-
-#config folder
-/config
+/server/config/.env
+/src/.env
