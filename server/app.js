@@ -16,12 +16,12 @@ app.use(contributions);
 app.use(stores);
 
 // mount build files to server
-app.use(express.static(path.join(__dirname, '..', 'build')));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
 // hand all unused routes to react router
 app.use((req, res, next) => {
-    res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
 const port = process.env.PORT || 5000;
