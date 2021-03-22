@@ -52,7 +52,7 @@ const StockData = (props) => {
                     <select id="stock-dropdown-3" defaultValue='Select demand' className={line} value={data.demand} onChange={e => onChangeText('demand', e)}>
                         <option disabled>Select demand</option>
                         <option value="LOW DEMAND">Low Demand</option>
-                        <option value="MEDIUM DEMAND">Medium Demand</option>
+                        <option value="MED. DEMAND">Medium Demand</option>
                         <option value="HIGH DEMAND">High Demand</option>
                     </select>
                 </div>

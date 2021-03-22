@@ -25,21 +25,6 @@ const newUser = (uid, email, callback) => {
 }
 
 
-const getCredits = async (uid, callback) => {
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-    try {
-        await client.connect();
-        const users = client.db().collection('users');
-        const result = await users.findOne({ _id: uid });
-        callback([1, result.credits]);
-    } catch(err) {
-        console.log(err);
-        callback([null]);
-    } finally {
-        client.close();
-    }
-}
-
 module.exports = {
     newUser,
     getCredits,

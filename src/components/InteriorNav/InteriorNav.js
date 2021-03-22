@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StatusAlert from 'react-status-alert';
+import StatusAlert, { StatusAlertService } from 'react-status-alert';
 import firebase from "firebase/app";
 import "firebase/auth";
 
@@ -28,6 +28,17 @@ class InteriorNav extends Component {
         return (pageNum === this.state.currentPage) ? { background: 'rgba(50, 211, 202, 0.1)', borderBottom: '3px solid #32D3CA' } : { border: 'none' };
     }
 
+    logout = () => {
+        firebase.auth().signOut().then(() => {
+            StatusAlertService.removeAllAlerts();
+            StatusAlertService.showSuccess('Success');
+            window.location.href=`${process.env.REACT_APP_URL}`;
+          }).catch((error) => {
+            StatusAlertService.removeAllAlerts();
+            StatusAlertService.showError('Unable to log you out. Try again later');
+          });          
+    }
+
     render() {
         return (
             <div>
@@ -38,25 +49,16 @@ class InteriorNav extends Component {
                         <button onClick={() => this.setState({ currentPage: 0 })} style={this.renderNavStyles(0)} className='interior-nav__nav-btn'>
                             Data
                         </button>
-                        <button onClick={() => this.setState({ currentPage: 1 })} style={this.renderNavStyles(1)} className='interior-nav__nav-btn'>
-                            Contributions
-                        </button>
                     </div>
                     <div className='interior-nav__left-items'>
-                        <div className='interior-nav__credits'>
-                            <div className='interior-nav__credits-content'>
-                                <img src={creditsIcon} alt='credits' className='interior-nav__credits-icon' />
-                                24 Credits
-                            </div>
-                        </div>
-                        <button className='interior-nav__contribute-btn'>
+                        <button className='interior-nav__contribute-btn' onClick={() => window.location.href=`${process.env.REACT_APP_URL}/contribute/1`}>
                             <div className='interior-nav__contribute-content'>
                                 <img src={contributeIcon} alt='contribute' className='interior-nav__contribute-icon' />
                                 Contribute
                             </div>
                         </button>
                         <img onClick={() => window.location.href='mailto:trybeacon@gmail.com'} src={feedback} alt='feedback' className='interior-nav__feedback' />
-                        <img src={profile} alt='profile' className='interior-nav__profile-pic' />
+                        <img onClick={() => this.logout()} src={profile} alt='profile' className='interior-nav__profile-pic' />
                     </div>
                 </div>
             </div>

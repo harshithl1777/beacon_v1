@@ -23,7 +23,7 @@ const Thanks = (props) => {
         location: totalData.location,
         address: totalData.address,
         lines: {
-            currentLine: `About ${totalData.pplInLine} people in line`,
+            currentLine: `${totalData.pplInLine} people in line`,
             speed: totalData.lineSpeed,
             wait: `About ${totalData.waitTime} min wait-time`
         },
