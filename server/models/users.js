@@ -27,5 +27,4 @@ const newUser = (uid, email, callback) => {
 
 module.exports = {
     newUser,
-    getCredits,
 };
