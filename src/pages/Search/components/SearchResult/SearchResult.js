@@ -37,25 +37,25 @@ class SearchResult extends Component {
             <div className='search-result'>
                 <div className='search-result__follow-store'>
                     <div onClick={() => this.newFollower()} className='search-result__follow-content'>
-                        <img src={followIcon} className='search-result__follow-icon'/>
+                        <img alt='store' src={followIcon} className='search-result__follow-icon'/>
                         FOLLOW STORE
                     </div>
                 </div>
                 <div className='search-result__store-info'>
-                    <img src={storeIcon} className='search-result__store-img' />
+                    <img alt='store' src={storeIcon} className='search-result__store-img' />
                     <div className='search-result__store-details'>
                         <h2 className='search-result__store-name'>{this.data.name}</h2>
                         <h4 className='search-result__store-address'>{this.data.address}</h4>
                         <div className='search-result__tags'>
                             <div className='search-result__last-updated'>
                                 <div className='search-result__updated-content'>
-                                    <img src={lastUpdatedIcon} className='search-result__updated-icon'/>
+                                    <img alt='store' src={lastUpdatedIcon} className='search-result__updated-icon'/>
                                     <h4 className='search-result__updated-text'>UPDATED FREQUENTLY</h4>
                                 </div>
                             </div>
                             <div className='search-result__followers'>
                                 <div className='search-result__followers-content'>
-                                    <img src={followersIcon} className='search-result__followers-icon'/>
+                                    <img alt='store' src={followersIcon} className='search-result__followers-icon'/>
                                     <h4 className='search-result__followers-text'>{`${this.data.followers} FOLLOWERS`}</h4>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ class SearchResult extends Component {
                         <div className='search-result__line-speed line-text'>{this.data.lines.speed}</div>
                         <div className='search-result__wait-time line-text'>{this.data.lines.wait}</div>
                     </div>
-                    <img draggable='false' className='search-result__chart-bar' src={chartBar} />
+                    <img alt='store' draggable='false' className='search-result__chart-bar' src={chartBar} />
                     <table className='search-result__data-chart'>
                         {this.renderChart()}
                     </table>

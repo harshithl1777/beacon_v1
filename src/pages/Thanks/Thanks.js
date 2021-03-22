@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import StatusAlert, { StatusAlertService, StautsAlertService } from 'react-status-alert';
+import StatusAlert, { StatusAlertService } from 'react-status-alert';
 import logo from "./assets/logo.svg";
 import contributed from "./assets/contributed.svg";
 import './thanks.css';

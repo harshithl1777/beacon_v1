@@ -4,7 +4,6 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 import contributeIcon from './assets/contributeIcon.svg';
-import creditsIcon from './assets/creditsIcon.svg';
 import feedback from './assets/feedback.svg';
 import logo from './assets/logo.svg';
 import profile from './assets/profile.svg';

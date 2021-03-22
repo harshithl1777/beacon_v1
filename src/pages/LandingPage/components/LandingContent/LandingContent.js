@@ -1,5 +1,4 @@
 import React from 'react';
-import landing__img from './assets/landingimg.svg';
 import './landing.css';
 
 const LandingContent = () => {
