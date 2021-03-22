@@ -16,18 +16,21 @@ app.post('/api/stores/replace', ({ body }, res) => {
     }
 });
 
-app.get('/api/stores/get', ({ query }, res) => {
-    console.log(query);
+app.get('/api/stores', ({ query }, res) => {
     if (query.token === process.env.API_STORE_DATA_TOKEN) {
         stores.getStore(query.docID, (result) => {
-            if (result[0]) {
-                res.send({ result });
+            if (result[0] !== null) {
+                if (result[0] === '0') {
+                    res.send({ data: 0 })
+                } else {
+                    res.send({ data: result[0] });
+                }
             } else {
-                res.status(500).send({ result: 'No document found' });
+                res.status(500).send({ result: 'Failed' });
             }
         });
     } else {
-        res.status(400).send({ result: 'failed' });
+        res.status(400).send({ result: 'Failed' });
     }
 });
 

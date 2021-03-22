@@ -1,22 +1,15 @@
 import React, {Component} from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Geocoder from 'react-mapbox-gl-geocoder';
-import StatusAlert, { StatusAlertService } from 'react-status-alert';
+import StatusAlert from 'react-status-alert';
 import logo from "./assets/logo.svg";
 import './contribute.css';
 import moment from 'moment';
 
-
-
 const mapAccess = {
-    mapboxApiAccessToken: "pk.eyJ1IjoibGF0Y2hhbiIsImEiOiJja21pMXZla3EwZDNmMnh0NHJ3NXR5eWl3In0.2S9WUi9cSc70L5E3cl5pFw"
+    mapboxApiAccessToken: process.env.REACT_APP_MAPBOX_TOKEN
 }
- 
-const mapStyle = {
-    width: '100%',
-    height: 600
-}
- 
+
 const queryParams = {
     country: 'ca',
     region: 'on',
@@ -25,13 +18,15 @@ const queryParams = {
     limit: 4, 
 }
 
-
-
 class Contribute extends Component {
     constructor() {
         super();
-        this.state = { id: null, storeName: null, address: null, location: null, time: null, checkBoxClicked: false, filledOut: null };
+        this.state = { id: null, name: null, address: null, location: null, time: null, checkBoxClicked: false, filledOut: null };
         this.startBtn = React.createRef();
+    }
+
+    componentDidUpdate() {
+        console.log(this.state.location);
     }
 
     state = {
@@ -39,24 +34,20 @@ class Contribute extends Component {
     }
 
     onSelected = (viewport, item) => {
-        console.log(item);
         var today = moment().format('MMM D, h:mm a');
-
-
+        const toReplace = item.text+', ';
         if (this.state.checkBoxClicked) {
             this.setState({id: item.id,
                 time: today,
-                name: "TEST",
-                storeName: item.text,
-                address: item.properties. address,
-                location: [item.center], filledOut: true });
+                name: item.text,
+                address: item.place_name.replace(toReplace, ''),
+                location: item.center, filledOut: true });
         } else {
             this.setState({id: item.id,
                 time: today,
-                name: "TEST",
-                storeName: item.text,
-                address: item.properties.address,
-                location: [item.center] });
+                name: item.text,
+                address: item.place_name.replace(toReplace, ''),
+                location: item.center });
         }
 
     }
@@ -71,7 +62,7 @@ class Contribute extends Component {
 
 
     checkboxClicked = () => {
-        if (this.state.storeName) {
+        if (this.state.name) {
             this.setState({checkBoxClicked: !this.state.checkBoxClicked, filledOut: true });
         } else {
             this.setState({checkBoxClicked: !this.state.checkBoxClicked });

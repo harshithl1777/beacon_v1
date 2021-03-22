@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StatusAlert, { StatusAlertService } from 'react-status-alert';
+import StatusAlert from 'react-status-alert';
 import firebase from "firebase/app";
 import "firebase/auth";
 

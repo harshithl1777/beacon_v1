@@ -1,5 +1,4 @@
-import { BrowserRouter as Link } from 'react-router-dom';
-import React, { Component } from 'react';
+import React from 'react';
 import safari from "./assets/safari.svg";
 import './radar.css';
 
@@ -17,7 +16,7 @@ const Radar = () => {
                 <div className="radar__cont">
                     <div className="cont__fixed">
                         <button className="fixed__check"></button>
-                        <img className="fixed__img" src={safari}></img>
+                        <img alt='compass' className="fixed__img" src={safari}></img>
                         <h1 className="fixed__num-cont">3 total contributions</h1>
                         <button className="fixed__stock-cont" disabled>1 STOCK CONT.</button>
                         <button className="fixed__lines-cont" disable>1 LINES CONT.</button>

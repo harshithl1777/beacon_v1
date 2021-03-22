@@ -8,7 +8,7 @@ const replaceStore = async (data, callback) => {
     try {
         await client.connect();
         const stores = client.db().collection('stores');
-        const filter = { _id: data.id };
+        const filter = { _id: data._id };
         const result = await stores.replaceOne(filter, data);
         callback([result.modifiedCount]);
     } catch(err) {
@@ -26,7 +26,11 @@ const getStore = async (docID, callback) => {
         const stores = client.db().collection('stores');
         const filter = { _id: docID };
         const result = await stores.findOne(filter);
-        callback([result]);
+        if (result === null) {
+            callback(['0']);
+        } else {
+            callback([result]);
+        }
     } catch(err) {
         console.log(err);
         callback([null])
