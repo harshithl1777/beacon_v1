@@ -23,10 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # config folder
-/server/config
 
 #test files
 /server/test.js
 
 #env variables
-.env
