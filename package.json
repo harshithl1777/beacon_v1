@@ -29,12 +29,13 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-status-alert": "^1.1.0",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "concurrently": "^6.0.0"
   },
   "scripts": {
     "server": "cd server && npm start",
     "client": "react-scripts start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "proxy": "http://localhost:5000",
   "eslintConfig": {
