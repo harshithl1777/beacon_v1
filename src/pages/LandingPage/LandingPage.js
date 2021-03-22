@@ -16,13 +16,6 @@ const LandingPage = () => {
         <div>
             <NavBar/>
             <LandingContent/>
-            <CenterContent header= "BEACON FOR CONSUMERS" main={["Built with ", <span>all the features </span>, "you need as a", <span> consumer </span>]} sub="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
-            <RightContent main={["Get stock and lines data sourced", <br/>, "directly from store managers"]} sub="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
-            <LeftContent main={["Never miss a change in stock,", <br/>, "lines or review data"]} sub="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
-            <RightContent main={["The only platform with", <br/>, "consistent data acquisition"]} sub="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
-            <CenterContent header= "HOW IT WORKS" main={[<span>Designed </span>, "and ", <span>developed </span>, "with " ,<span>consumers </span>, "in mind"]} sub="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
-            <HighlightContent/>
-            <LastContent/>
             <FooterContent/>
         </div>
         

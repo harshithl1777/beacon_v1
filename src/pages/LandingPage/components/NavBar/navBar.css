@@ -2,7 +2,7 @@
   font-size: 10px;
 }
 
-a {
+a, a:hover{
   text-decoration: none;
 }
 .navbar {
@@ -32,6 +32,10 @@ a {
   color: #01052a;
 }
 
+.navbar__item:hover{
+  color: #001c36;
+  opacity: 0.80;
+}
 .navbar__right {
   margin-right: 40px;
   display: flex;
