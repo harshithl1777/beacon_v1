@@ -26,7 +26,7 @@ class Login extends Component {
     continueClicked = () => {
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .then(({ user }) => {
-            window.location.href = 'http://localhost:3000/signup';
+            window.location.href = '/signup';
         })
         .catch(() => {
             StatusAlertService.removeAllAlerts();

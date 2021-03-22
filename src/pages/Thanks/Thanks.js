@@ -32,7 +32,7 @@ const Thanks = (props) => {
     };
     
     const insertToDB = () => {
-        axios.get(`${process.env.REACT_APP_URL}/api/stores`, {
+        axios.get(`/api/stores`, {
             params: {
                 token: process.env.REACT_APP_API_STORE_DATA_TOKEN,
                 docID: formattedData._id
@@ -66,13 +66,13 @@ const Thanks = (props) => {
             formattedData.stock.push(old.stock[z]);
         }
         console.log(formattedData, old);
-        axios.post(`${process.env.REACT_APP_URL}/api/stores/replace`, {
+        axios.post(`/api/stores/replace`, {
             token: process.env.REACT_APP_API_STORE_DATA_TOKEN,
             data: formattedData,
         })
         .then(() => {
             console.log('WORKED');
-            // window.location.href = `${process.env.REACT_APP_URL}/app/search`;
+            // window.location.href = `/app/search`;
         })
         .catch((err) => {
             console.log(err);
@@ -82,12 +82,12 @@ const Thanks = (props) => {
 
     const insertNewDoc = () => {
         console.log(process.env.REACT_APP_URL);
-        axios.post(`${process.env.REACT_APP_URL}/api/stores/new`, {
+        axios.post(`/api/stores/new`, {
             token: process.env.REACT_APP_API_STORE_DATA_TOKEN,
             data: formattedData,
         })
         .then(() => {
-            window.location.href = `${process.env.REACT_APP_URL}/app/search`;
+            window.location.href = `/app/search`;
         })
         .catch(() => StatusAlertService.showError('Unable to insert new data. Try again later'));
     }

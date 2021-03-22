@@ -28,7 +28,7 @@ class Signup extends Component {
             firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
             .then(({ user }) => {
                 console.log(user.uid);
-                axios.post('http://localhost:3000/mongo/users/new', {
+                axios.post('/api/users/new', {
                     token: process.env.REACT_APP_API_USERS_TOKEN,
                     email: this.state.email,
                     pw: this.state.password,

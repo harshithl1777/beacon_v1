@@ -14,14 +14,11 @@ app.use(bodyParser.json());
 app.use(users);
 app.use(contributions);
 app.use(stores);
-
-// mount build files to server
-app.use(express.static(path.join(__dirname, '..', 'build')));
-app.use(express.static('public'));
+const port = process.env.PORT || 5000;
 
 // hand all unused routes to react router
 app.use((req, res, next) => {
     res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
 });
 
-app.listen(process.env.PORT, '0.0.0.0');
+app.listen(port, () => console.log('Express is online'));
