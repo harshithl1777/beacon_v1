@@ -19,8 +19,8 @@ app.use(stores);
 app.use(express.static(path.join(__dirname, '..', 'build')));
 
 // hand all unused routes to react router
-app.use((req, res, next) => {
-    res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', '/client/build/index.html'));
 });
 
 const port = process.env.PORT || 5000;
