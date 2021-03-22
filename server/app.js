@@ -24,4 +24,4 @@ app.use((req, res, next) => {
     res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
 });
 
-app.listen(4000 || process.env.PORT, () => console.log('Express is listening'));
+app.listen(3000 || process.env.PORT);
