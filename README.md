@@ -10,4 +10,9 @@
 
 In the project directory, you can run:
 
+_**npm start**_
+
+to launch on a local host.
+
+
 
