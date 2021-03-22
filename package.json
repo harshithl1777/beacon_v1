@@ -35,7 +35,7 @@
   "scripts": {
     "server": "cd server && npm start",
     "client": "react-scripts start",
-    "build": "react-scripts build"
+    "start": "react-scripts start"
   },
   "proxy": "http://localhost:5000",
   "eslintConfig": {
