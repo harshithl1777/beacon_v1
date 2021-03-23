@@ -112,7 +112,6 @@ class Signup extends Component {
                             </div>
                             <button onClick={() => this.getStartedClicked()} className="sign-up__btn btn--sea">Get Started with Beacon</button>
                         </div>
-                        
                 </div>
             </div>
         );
