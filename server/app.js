@@ -17,7 +17,7 @@ app.use(stores);
 
 // mount build files to server
 app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'public')));
 
 // hand all unused routes to react router
 app.use((req, res, next) => {
