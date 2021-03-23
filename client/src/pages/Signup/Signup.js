@@ -112,7 +112,6 @@ class Signup extends Component {
                             </div>
                             <button onClick={() => this.getStartedClicked()} className="sign-up__btn btn--sea">Get Started with Beacon</button>
                         </div>
-                        <img className='sign-up__seperator' src={line} alt='Line' draggable='false' />
                         
                 </div>
             </div>
