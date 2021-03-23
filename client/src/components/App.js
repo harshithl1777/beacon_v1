@@ -31,14 +31,15 @@ class App extends Component {
             appId: "1:145458149399:web:f8902875dbf6a0707d4452",
           };
         firebase.initializeApp(firebaseConfig);
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user && !this.state.userID) {
-                console.log('Logged in');
-                this.setState({ userID: user.uid });
-            } else {
-                window.location.href = '/auth/login';
-            }
-        });
+        if (location.href.replace('https://trybeacon.herokuapp.com/', '') !== 'auth/login' || location.href.replace('https://trybeacon.herokuapp.com/', '') !== 'auth/signup') {
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user && !this.state.userID) {
+                    console.log('Logged in');
+                } else {
+                    window.location.href = '/auth/login';
+                }
+            });
+        }
     }
     render() {
         return (
