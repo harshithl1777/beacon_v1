@@ -34,7 +34,7 @@ class Signup extends Component {
                     pw: this.state.password,
                 })
                 .then(({ data }) => {
-                    console.log(data.uid);
+                    window.location.href='/app/search';
                 })
                 .catch(({ result }) => {
                     console.log(result);
@@ -81,6 +81,7 @@ class Signup extends Component {
             } else {
                 StatusAlertService.removeAllAlerts();
                 StatusAlertService.showSuccess("Success");
+                window.location.href='/app/search';
             }
          }).catch((error) => {
             console.log(error);
@@ -112,21 +113,6 @@ class Signup extends Component {
                             <button onClick={() => this.getStartedClicked()} className="sign-up__btn btn--sea">Get Started with Beacon</button>
                         </div>
                         <img className='sign-up__seperator' src={line} alt='Line' draggable='false' />
-                        <div className='sign-up__third-party'>
-                            <button onClick={() => this.providerLogin('google')} className='sign-up__google'>
-                                <div className='sign-up__google-content'>
-                                    <img src={googleIcon} alt='google' className='sign-up__google-icon' />
-                                    Start with Google
-                                </div>
-                            </button>
-                            <button onClick={() => this.providerLogin('fb')} className='sign-up__fb'>
-                                <div className='sign-up__fb-content'>
-                                    <img src={fbIcon} alt='facebook' className='sign-up__fb-icon' />
-                                    Start with Facebook
-                                </div>
-                            </button>
-                        </div>
-                        
                 </div>
             </div>
         );

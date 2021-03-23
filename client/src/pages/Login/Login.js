@@ -26,7 +26,7 @@ class Login extends Component {
     continueClicked = () => {
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .then(({ user }) => {
-            window.location.href = '/signup';
+            window.location.href = '/app/search';
         })
         .catch(() => {
             StatusAlertService.removeAllAlerts();
@@ -77,20 +77,6 @@ class Login extends Component {
                             <button className="log-in__btn btn--sea" onClick={() => this.continueClicked()}>Continue to Beacon</button>
                         </div>
                         <img className='log-in__seperator' src={line} alt='Line' draggable='false' />
-                        <div className='log-in__third-party'>
-                            <button onClick={() => this.providerLogin('google')} className='log-in__google'>
-                                <div className='log-in__google-content'>
-                                    <img src={googleIcon} alt='google' className='log-in__google-icon' />
-                                    Sign in to Google
-                                </div>
-                            </button>
-                            <button onClick={() => this.providerLogin('fb')} className='log-in__fb'>
-                                <div className='log-in__fb-content'>
-                                    <img src={fbIcon} alt='facebook' className='log-in__fb-icon' />
-                                    Sign in to Facebook
-                                </div>
-                            </button>
-                        </div>
                 </div>
             </div>
         );
