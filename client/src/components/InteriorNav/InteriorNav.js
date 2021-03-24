@@ -31,6 +31,16 @@ class InteriorNav extends Component {
     }
 
     render() {
+        const currentURL = window.location.href.replace('https://trybeacon.herokuapp.com', '');
+        if (currentURL !== '/auth/login' && currentURL !== '/auth/signup' && currentURL !== '/' && currentURL !== '') {
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user && !this.state.userID) {
+                    console.log('Logged in');
+                } else {
+                    window.location.href = '/auth/login';
+                }
+            });
+        }
         return (
             <div>
                 <StatusAlert />
