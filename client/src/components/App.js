@@ -31,7 +31,8 @@ class App extends Component {
             appId: "1:145458149399:web:f8902875dbf6a0707d4452",
           };
         firebase.initializeApp(firebaseConfig);
-        if (window.location.href.replace('https://trybeacon.herokuapp.com/', '') !== 'auth/login' && window.location.href.replace('https://trybeacon.herokuapp.com/', '') !== 'auth/signup') {
+        const currentURL = window.location.href.replace('https://trybeacon.herokuapp.com', '');
+        if (currentURL !== '/auth/login' && currentURL !== '/auth/signup' && currentURL !== '/' && currentURL !== '') {
             firebase.auth().onAuthStateChanged((user) => {
                 if (user && !this.state.userID) {
                     console.log('Logged in');
