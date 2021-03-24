@@ -15,6 +15,19 @@ class InteriorNav extends Component {
         this.state = { currentPage: 0, userID: null };
     }
 
+    componentDidMount() {
+        const currentURL = window.location.href.replace('https://trybeacon.herokuapp.com', '');
+        if (currentURL !== '/auth/login' && currentURL !== '/auth/signup' && currentURL !== '/' && currentURL !== '') {
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user && !this.state.userID) {
+                    console.log('Logged in');
+                } else {
+                    window.location.href = '/auth/login';
+                }
+            });
+        }
+    }
+
     renderNavStyles = (pageNum) => {
         return (pageNum === this.state.currentPage) ? { background: 'rgba(50, 211, 202, 0.1)', borderBottom: '3px solid #32D3CA' } : { border: 'none' };
     }
@@ -31,16 +44,6 @@ class InteriorNav extends Component {
     }
 
     render() {
-        const currentURL = window.location.href.replace('https://trybeacon.herokuapp.com', '');
-        if (currentURL !== '/auth/login' && currentURL !== '/auth/signup' && currentURL !== '/' && currentURL !== '') {
-            firebase.auth().onAuthStateChanged((user) => {
-                if (user && !this.state.userID) {
-                    console.log('Logged in');
-                } else {
-                    window.location.href = '/auth/login';
-                }
-            });
-        }
         return (
             <div>
                 <StatusAlert />
