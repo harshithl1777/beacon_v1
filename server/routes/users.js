@@ -31,3 +31,7 @@ app.get('/api/users/credits', ({ query }, res) => {
     }
 });
 
+app.head('/webhook', (req, res) => {
+    res.status(200).send('Success');
+});
+
