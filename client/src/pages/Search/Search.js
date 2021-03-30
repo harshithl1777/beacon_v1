@@ -44,7 +44,7 @@ class Search extends Component {
         if (this.state.locationBtnText === 'Location Found') {
             axios.post(`/api/stores/query`, {
                 token: process.env.REACT_APP_API_STORE_DATA_TOKEN,
-                origins: [43.597156, -79.703706],
+                origins: [this.location.long, this.location.lat],
                 distance: parseInt(this.state.distanceSelected)
             })
             .then(({ data }) => {
