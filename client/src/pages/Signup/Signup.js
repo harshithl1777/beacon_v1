@@ -34,7 +34,6 @@ class Signup extends Component {
                     pw: this.state.password,
                 })
                 .then(({ data }) => {
-                    console.log(data.uid);
                     window.location.href='/app/search';
                 })
                 .catch(({ result }) => {
@@ -82,6 +81,7 @@ class Signup extends Component {
             } else {
                 StatusAlertService.removeAllAlerts();
                 StatusAlertService.showSuccess("Success");
+                window.location.href='/app/search';
             }
          }).catch((error) => {
             console.log(error);
@@ -112,6 +112,10 @@ class Signup extends Component {
                             </div>
                             <button onClick={() => this.getStartedClicked()} className="sign-up__btn btn--sea">Get Started with Beacon</button>
                         </div>
+<<<<<<< HEAD
+=======
+                        <img className='sign-up__seperator' src={line} alt='Line' draggable='false' />
+>>>>>>> origin
                 </div>
             </div>
         );

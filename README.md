@@ -1,6 +1,8 @@
 <img width="526" alt="Landing page" src="https://user-images.githubusercontent.com/44104695/111893733-13ebdd80-89db-11eb-8e00-66060d979e08.png">
 
-# Beacon
+# Beacon 
+
+The production build for Beacon can be found [here].
 
 ### Description
 
@@ -31,5 +33,7 @@ To launch this project, simply run the following commands in your terminal / com
 5. To start the client-side: `npm run-script start-client`
 6. To launch the full application: `npm start`
 
+[here]: https://trybeacon.herokuapp.com
+[Mapbox]: https://mapbox.com
 
 

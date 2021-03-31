@@ -26,7 +26,7 @@ class Login extends Component {
     continueClicked = () => {
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .then(({ user }) => {
-            window.location.href='/app/search';
+            window.location.href = '/app/search';
         })
         .catch(() => {
             StatusAlertService.removeAllAlerts();
@@ -76,6 +76,10 @@ class Login extends Component {
                             <h3 className='log-in__forgot-password'>Forgot your password?</h3>
                             <button className="log-in__btn btn--sea" onClick={() => this.continueClicked()}>Continue to Beacon</button>
                         </div>
+<<<<<<< HEAD
+=======
+                        <img className='log-in__seperator' src={line} alt='Line' draggable='false' />
+>>>>>>> origin
                 </div>
             </div>
         );
