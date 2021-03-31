@@ -76,10 +76,6 @@ class Login extends Component {
                             <h3 className='log-in__forgot-password'>Forgot your password?</h3>
                             <button className="log-in__btn btn--sea" onClick={() => this.continueClicked()}>Continue to Beacon</button>
                         </div>
-<<<<<<< HEAD
-=======
-                        <img className='log-in__seperator' src={line} alt='Line' draggable='false' />
->>>>>>> origin
                 </div>
             </div>
         );
