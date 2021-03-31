@@ -20,8 +20,13 @@
   "scripts": {
     "test": "jest",
     "start": "cd server && node app.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "client": "react-scripts start",
+    "dev": "concurrently \"npm start\" \"npm run client\""
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  }
 }
