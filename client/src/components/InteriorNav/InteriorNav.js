@@ -18,7 +18,7 @@ class InteriorNav extends Component {
                 console.log('Logged in');
                 this.setState({ userID: user.uid });
             } else {
-                window.location.href = 'https://trybeacon.herokuapp.com/auth/login';
+                window.location.href = '/';
             }
         });
     }
@@ -44,7 +44,7 @@ class InteriorNav extends Component {
                 <StatusAlert />
                 <div className='interior-nav'>
                     <div className='interior-nav__right-items'>
-                        <img src={logo} onClick={() => window.location.href = 'https://trybeacon.herokuapp.com'} alt='logo' className='interior-nav__logo' draggable='false'/>
+                        <img src={logo} onClick={() => window.location.href = '/'} alt='logo' className='interior-nav__logo' draggable='false'/>
                         <button onClick={() => this.setState({ currentPage: 0 })} style={this.renderNavStyles(0)} className='interior-nav__nav-btn'>
                             Data
                         </button>

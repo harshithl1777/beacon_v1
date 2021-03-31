@@ -1,63 +1,26 @@
 {
-  "name": "beacon",
-  "version": "0.1.0",
-  "private": true,
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "dependencies": {
-    "@popperjs/core": "^2.9.1",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
-    "bootstrap": "^4.6.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "firebase": "^8.3.0",
     "firebase-admin": "^9.5.0",
-    "mapbox-gl": "^2.1.1",
     "moment": "^2.29.1",
     "mongodb": "^3.6.5",
     "nodemon": "^2.0.7",
     "passport-auth-token": "^1.0.1",
-    "path": "^0.12.7",
-    "react": "^17.0.1",
-    "react-bootstrap": "^1.5.2",
-    "react-dom": "^17.0.1",
-    "react-map-gl": "^6.1.10",
-    "react-mapbox-gl-geocoder": "^1.1.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "react-status-alert": "^1.1.0",
-    "web-vitals": "^1.0.1"
+    "path": "^0.12.7"
   },
   "scripts": {
-    "start": "npm run build && (cd server && npm start)",
-    "start-client": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start-server": "cd server && npm start"
+    "test": "jest",
+    "start": "cd server && node app.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "jest": "^26.6.0"
-  }
+  "author": "",
+  "license": "ISC"
 }
