@@ -380,8 +380,20 @@ input:focus {
     height: 88px;
 }
 
-.add-product__next {
+.nextPage {
     margin-top: 33px;
     width: 687px;
     height: 51px;
+    background: #001C36;
+    border-radius: 4px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 6%;
+
+    text-align: center;
+
+    color: #FFFFFF;
 }

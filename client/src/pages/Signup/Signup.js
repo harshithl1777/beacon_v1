@@ -95,7 +95,7 @@ class Signup extends Component {
                 <div className='sign-up'>
                         <img className="sign-up__logo" src={logo} alt="logo"></img>
                         <h1 className="sign-up__title">Sign up for Beacon</h1>
-                        <h3 className='sign-up__desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</h3>
+                        <h3 className='sign-up__desc'>Create an account and start searching for stock/lines input at your local grocery stores!</h3>
                         <div className="sign-up__form">
                             <input className="sign-up__input" value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} placeholder="Enter your email address"/>
                             <div className='sign-up__password-wrapper'>

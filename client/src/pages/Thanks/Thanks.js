@@ -100,10 +100,7 @@ const Thanks = (props) => {
             <div className="thanks-top-line"></div>  
             <img className="logo" src={logo} alt="logo"></img>
                 <h1 className="thanks-title">{`Thanks for contributing!`}</h1>
-                <h1 className="thanks-title__text">Lorem ipsum dolor sit amet,
-                 consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                  ut labore et dolore magna aliqua ut enim ad minim veniam.
-                   Lorem ipsum dolor sit amet, co.</h1>
+                <h1 className="thanks-title__text">Your credits have been updated! More contributions results in more credits added to your account enabling you to discover information about all of your favourite grocery stores. </h1>
             <img className="contributed" alt="contributed" src={contributed}></img>
             <button className="gtg" onClick={() => insertToDB()}>I'm good to go</button>
         </div>

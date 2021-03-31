@@ -21,8 +21,8 @@
     "test": "jest",
     "start": "cd server && node app.js",
     "heroku-postbuild": "cd client && npm install && npm run build",
-    "client": "react-scripts start",
-    "dev": "concurrently \"npm start\" \"npm run client\""
+    "client": "cd client && npm start",
+    "dev": "concurrently \"nodemon\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",

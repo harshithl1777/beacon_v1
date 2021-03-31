@@ -77,7 +77,7 @@ const LinesData = (props) => {
                     </div>
                         <Link to={{ pathname: '/contribute/3', state:{name: storeNameProp,
                              id: idProp, location: locationProp, address: addressProp, time: timeProp, stock: stockProp, pplInLine: line.people, lineSpeed: line.speed, waitTime: line.time }}}>
-                            <button className="add-product__next" disabled={!line.filled}>Continue to the next step</button>
+                            <button className="nextPage" disabled={!line.filled}>Continue to the next step</button>
                         </Link>
                 </div>      
                     

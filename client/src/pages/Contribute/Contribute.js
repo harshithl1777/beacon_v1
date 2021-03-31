@@ -80,10 +80,8 @@ class Contribute extends Component {
             <div className="top-line"></div>
                 <img className="logo" src={logo} alt="logo"></img>
                 <h1 className="title">Thanks for contributing! Let’s get you started.</h1>
-                <h1 className="title__text">Lorem ipsum dolor sit amet,
-                 consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua ut
-                   enim ad minim veniam. Lorem ipsum dolor sit amet, co.</h1>
+                <h1 className="title__text">We'll walk you through a few easy steps that will only take you roughly 30 seconds to complete!       
+                    First, choose the grocery store you attended.</h1>
 
                 <div className="con-form">
                     <h1 className="con-form__text">What store did you shop at?</h1>

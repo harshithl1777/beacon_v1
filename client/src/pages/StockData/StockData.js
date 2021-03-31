@@ -83,7 +83,7 @@ const StockData = (props) => {
                     <br></br>
                     {renderProductInputs()}
                     <Link to={{ pathname: '/contribute/2.1', state:{ name: storeNameProp, time: timeProp, id: idProp, location: locationProp, address: addressProp, stock: data }}}>
-                        <button className="add-product__next">Continue to the next step</button>
+                        <button className="next">Continue to the next step</button>
                     </Link>
                 </div>
         </div>
