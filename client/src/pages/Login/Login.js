@@ -63,7 +63,7 @@ class Login extends Component {
                 <div className='log-in'>
                         <img className="log-in__logo" src={logo} alt="logo"></img>
                         <h1 className="log-in__title">Log in to Beacon</h1>
-                        <h3 className='log-in__desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</h3>
+                        <h3 className='log-in__desc'>Log in to your account and start searching for stock/lines input at your local grocery stores!</h3>
                         <div className="log-in__form">
                             <input value={this.state.email} 
                                 onChange={(e) => this.setState({ email: e.target.value })} 
