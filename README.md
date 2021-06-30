@@ -27,8 +27,8 @@ To launch this project, simply run the following commands in your terminal / com
 1. `git clone https://github.com/harshithl1777/beacon.git && cd beacon`
 2. `npm install`
 3. Get your own Mapbox API key from [Mapbox](https://mapbox.com) to run the Geocoder functionality
-4. To start up the server-side: `npm run-script start-server`
-5. To start the client-side: `npm run-script start-client`
+4. To start up the server-side: `npm run start-server`
+5. To start the client-side: `npm run start-client`
 6. To launch the full application: `npm start`
 
 
