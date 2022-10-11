@@ -15,21 +15,7 @@ Beacon operates on crowdsourced data. Essentially, consumers do the following wh
 
 ### Tech Stack
 
-Beacon uses the **MERN Stack** which involves `MongoDB, Express, React and Nodejs`. In addition to the MERN stack, Beacon also operates on a `Firebase Auth` authentication system for ease of third-party provider login / signup integration. Finally, Beacon makes use of the `Mapbox API` for geoencoding as well as our own internal REST API.
-
-### Challenges
-
-This was the first application that our team built that involved an internal REST API. Because of this, it was somewhat challenging since we had little knowledge about how a backend serves content to a webpage using a web-server like Express. However, after this project, we feel that we are now very familiar with REST APIs and web-servers, so that's definitely a massive bonus.
-
-### Development Setup Guidelines
-
-To launch this project, simply run the following commands in your terminal / command line:
-1. `git clone https://github.com/harshithl1777/beacon.git && cd beacon`
-2. `npm install`
-3. Get your own Mapbox API key from [Mapbox](https://mapbox.com) to run the Geocoder functionality
-4. To start up the server-side: `npm run start-server`
-5. To start the client-side: `npm run start-client`
-6. To launch the full application: `npm start`
+Beacon uses `Python` and `Flask` as the backend with `MongoDB` as the database. The frontend is fully `React` based.
 
 
 
